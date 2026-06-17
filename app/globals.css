@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
+
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg-primary:    #060f1c;
+  --bg-secondary:  #0a1929;
+  --bg-tertiary:   #0e2038;
+  --bg-card:       #0b1a2e;
+
+  --gold:          #C9963A;
+  --gold-light:    #E8B84B;
+  --gold-dim:      #9a7129;
+  --gold-glass:    rgba(201, 150, 58, 0.10);
+  --gold-border:   rgba(201, 150, 58, 0.22);
+
+  --graphite:      #1e2d3d;
+  --graphite-light:#263647;
+
+  --white:         #ffffff;
+  --off-white:     #f0f4f8;
+  --text-secondary:#8a9bb0;
+  --text-muted:    #4a5e74;
+
+  --glass-bg:      rgba(255,255,255,0.03);
+  --glass-border:  rgba(255,255,255,0.07);
+
+  --nav-h: 80px;
+}
+
+@theme inline {
+  --color-gold:        var(--gold);
+  --color-gold-light:  var(--gold-light);
+  --color-navy:        var(--bg-primary);
+  --color-graphite:    var(--graphite);
+  --font-display:      'Playfair Display', serif;
+  --font-sans:         'Inter', sans-serif;
+}
+
+/* ─── Base Reset ────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── Selection ─────────────────────────────────────────────────────── */
+::selection { background: rgba(201,150,58,0.28); color: #fff; }
+
+/* ─── Typography helpers ─────────────────────────────────────────────── */
+.font-display { font-family: 'Playfair Display', serif; }
+
+/* ─── Gold gradient text ─────────────────────────────────────────────── */
+.gold-text {
+  background: linear-gradient(130deg, #C9963A 0%, #E8B84B 45%, #C9963A 75%, #9a7129 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Gold divider ───────────────────────────────────────────────────── */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ─── Glass ──────────────────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-gold {
+  background: var(--gold-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-border);
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #C9963A 0%, #E8B84B 50%, #C9963A 100%);
+  background-size: 200% 100%;
+  color: #060f1c;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background-position 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-position: right center;
+  box-shadow: 0 0 32px rgba(201,150,58,0.35), 0 8px 24px rgba(0,0,0,0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(201,150,58,0.5);
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+}
+
+.btn-outline:hover {
+  background: var(--gold-glass);
+  border-color: var(--gold);
+  color: var(--gold-light);
+  box-shadow: 0 0 24px rgba(201,150,58,0.12);
+  transform: translateY(-1px);
+}
+
+/* ─── Card ───────────────────────────────────────────────────────────── */
+.premium-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.premium-card:hover {
+  border-color: var(--gold-border);
+  box-shadow: 0 24px 64px rgba(201,150,58,0.08), 0 0 0 1px rgba(201,150,58,0.06);
+  transform: translateY(-4px);
+}
+
+/* ─── Grid overlay ───────────────────────────────────────────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(201,150,58,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,150,58,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── Noise ──────────────────────────────────────────────────────────── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Eyebrow label ──────────────────────────────────────────────────── */
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── Section spacing ────────────────────────────────────────────────── */
+.section { padding: 7rem 0; }
+.section-sm { padding: 5rem 0; }
+
+/* ─── Animations ─────────────────────────────────────────────────────── */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes borderGlow {
+  0%,100% { border-color: rgba(201,150,58,0.15); }
+  50%      { border-color: rgba(201,150,58,0.4); }
+}
+
+.animate-float    { animation: float     6s ease-in-out infinite; }
+.animate-shimmer  { animation: shimmer   3.5s linear infinite; }
+.animate-marquee  { animation: marquee   30s linear infinite; }
+
+/* ─── Shimmer text ───────────────────────────────────────────────────── */
+.shimmer-gold {
+  background: linear-gradient(90deg, #C9963A 0%, #E8B84B 25%, #fff9e6 50%, #E8B84B 75%, #C9963A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Input ──────────────────────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-input:focus {
+  border-color: rgba(201,150,58,0.5);
+  box-shadow: 0 0 0 3px rgba(201,150,58,0.06), 0 0 16px rgba(201,150,58,0.08);
+}
+
+/* ─── Map placeholder ────────────────────────────────────────────────── */
+.map-placeholder {
+  background:
+    linear-gradient(135deg, var(--bg-secondary) 0%, var(--graphite) 100%);
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,150,58,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,150,58,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
