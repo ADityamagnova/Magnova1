@@ -14,13 +14,12 @@ const navLinks = [
   { href: '/contact',    label: 'Contact' },
 ];
 
-function MagnovaLogo({ size = 32 }: { size?: number }) {
+function MagnovaLogo({ className = '' }: { className?: string }) {
   return (
     <img
       src="/logo-icon.png"
-      alt="Magnova Logo"
-      style={{ width: size, height: size, objectFit: 'contain' }}
-      className="transition-transform duration-300 group-hover:scale-105"
+      alt="Magnova Logo Icon"
+      className={`h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${className}`}
     />
   );
 }
@@ -56,11 +55,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between" style={{ height: 'var(--nav-h)' }}>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group" aria-label="Magnova — Home">
+            <Link href="/" className="flex items-center gap-3.5 group py-2" aria-label="Magnova — Home">
               <MagnovaLogo />
               <span
-                className="font-display text-xl font-semibold tracking-widest text-white"
-                style={{ letterSpacing: '0.22em' }}
+                className="font-sans text-lg font-bold tracking-widest text-white transition-colors duration-300 group-hover:text-gold"
+                style={{ letterSpacing: '0.24em', fontFamily: "'Inter', sans-serif" }}
               >
                 MAGNOVA
               </span>

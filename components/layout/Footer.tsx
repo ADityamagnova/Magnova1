@@ -18,13 +18,12 @@ const industryLinks = [
   { label: 'Industrial Automation', href: '/technology#applications' },
 ];
 
-function FooterLogo() {
+function FooterLogo({ className = '' }: { className?: string }) {
   return (
     <img
       src="/logo-icon.png"
-      alt="Magnova Logo"
-      style={{ width: 30, height: 30, objectFit: 'contain' }}
-      className="transition-transform duration-300 group-hover:scale-105"
+      alt="Magnova Logo Icon"
+      className={`h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${className}`}
     />
   );
 }
@@ -43,11 +42,11 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-5" aria-label="Magnova — Home">
+            <Link href="/" className="flex items-center gap-3.5 mb-5 group" aria-label="Magnova — Home">
               <FooterLogo />
               <span
-                className="font-display text-lg font-semibold tracking-widest text-white"
-                style={{ letterSpacing: '0.22em' }}
+                className="font-sans text-base font-bold tracking-widest text-white transition-colors duration-300 group-hover:text-gold"
+                style={{ letterSpacing: '0.24em', fontFamily: "'Inter', sans-serif" }}
               >
                 MAGNOVA
               </span>

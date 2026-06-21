@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import LoadingWrapper from '@/components/layout/LoadingWrapper';
 
 export const metadata: Metadata = {
   title: {
@@ -54,9 +55,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LoadingWrapper>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LoadingWrapper>
       </body>
     </html>
   );
