@@ -5,11 +5,10 @@ import { motion } from 'framer-motion';
 export default function ProductsHero() {
   return (
     <section
-      className="w-full flex flex-col justify-center"
+      className="w-full flex flex-col justify-center py-12 md:py-16 px-6 md:px-12 lg:px-16"
       style={{
         background: 'linear-gradient(135deg, #070d1a 0%, #0d1e3a 100%)',
         borderBottom: '1px solid #1e2e4a',
-        padding: '48px 60px 40px',
         marginTop: 'var(--nav-h)',
       }}
       aria-labelledby="products-hero-heading"

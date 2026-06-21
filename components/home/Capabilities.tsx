@@ -45,7 +45,7 @@ export default function Capabilities() {
 
   return (
     <section className="py-32" style={{ background: '#061426' }}>
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <motion.div
           ref={ref}
@@ -107,7 +107,7 @@ export default function Capabilities() {
                 style={{ background: '#C89B3C' }}
               />
 
-              <h3 className="font-display text-xl font-semibold text-white mb-3">
+              <h3 className="font-display font-semibold text-white mb-3" style={{ fontSize: '1.05rem' }}>
                 {step.label}
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>

@@ -31,7 +31,7 @@ export default function HomeCTA() {
         }}
       />
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center relative">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center relative">
         <FadeIn>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />

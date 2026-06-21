@@ -676,9 +676,10 @@ export default function ProductsMain() {
             margin-bottom: 16px;
           }
           .sector-card-title {
+            font-family: 'Playfair Display', serif;
             font-size: 1.05rem;
-            font-weight: 700;
-            color: #f0f4ff;
+            font-weight: 600;
+            color: #ffffff;
             margin-bottom: 12px;
           }
           .sector-card-body {
@@ -702,6 +703,52 @@ export default function ProductsMain() {
           }
           @media (max-width: 640px) {
             .bh-grid { grid-template-columns: 1fr; }
+          }
+
+          /* Layout centering and padding overrides */
+          .products-tabs,
+          .section-header,
+          .suffix-key,
+          .grade-table-wrap,
+          .table-cta-bar,
+          .props-grid,
+          .bh-grid,
+          .sector-hero,
+          .sector-grades-bar,
+          .sector-cards {
+            max-width: 1440px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+          }
+
+          /* Default desktop paddings (lg breakpoint and up) */
+          .products-tabs { padding-left: 64px; padding-right: 64px; }
+          .section-header { padding-left: 64px; padding-right: 64px; }
+          .suffix-key { padding-left: 64px; padding-right: 64px; }
+          .table-cta-bar { padding-left: 64px; padding-right: 64px; }
+          .bh-grid { padding-left: 64px; padding-right: 64px; }
+          .sector-hero { padding-left: 64px; padding-right: 64px; }
+          .sector-grades-bar { padding-left: 64px; padding-right: 64px; }
+
+          @media (max-width: 1280px) {
+            .products-tabs { padding-left: 48px; padding-right: 48px; }
+            .section-header { padding-left: 48px; padding-right: 48px; }
+            .suffix-key { padding-left: 48px; padding-right: 48px; }
+            .table-cta-bar { padding-left: 48px; padding-right: 48px; }
+            .bh-grid { padding-left: 48px; padding-right: 48px; }
+            .sector-hero { padding-left: 48px; padding-right: 48px; }
+            .sector-grades-bar { padding-left: 48px; padding-right: 48px; }
+          }
+
+          @media (max-width: 768px) {
+            .products-tabs { padding-left: 24px; padding-right: 24px; }
+            .section-header { padding-left: 24px; padding-right: 24px; }
+            .suffix-key { padding-left: 24px; padding-right: 24px; }
+            .table-cta-bar { padding-left: 24px; padding-right: 24px; }
+            .bh-grid { padding-left: 24px; padding-right: 24px; }
+            .sector-hero { padding-left: 24px; padding-right: 24px; }
+            .sector-grades-bar { padding-left: 24px; padding-right: 24px; }
           }
         `,
       }} />

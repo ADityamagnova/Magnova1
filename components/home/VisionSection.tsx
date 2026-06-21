@@ -26,7 +26,7 @@ export default function VisionSection() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left: text */}
@@ -69,11 +69,11 @@ export default function VisionSection() {
           </div>
 
           {/* Right: animated visual */}
-          <FadeIn delay={0.2} direction="left">
+          <FadeIn delay={0.2} direction="left" className="flex items-center justify-center w-full">
             <div className="relative">
               {/* Outer ring */}
               <div
-                className="relative mx-auto"
+                className="relative mx-auto scale-[0.8] sm:scale-100 origin-center my-4"
                 style={{ width: 340, height: 340 }}
               >
                 {/* Pulsing rings */}

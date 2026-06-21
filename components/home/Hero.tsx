@@ -134,7 +134,7 @@ export default function Hero() {
       <div className="absolute inset-0 hero-grid opacity-30" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 lg:px-16 text-center">
 
         {/* Eyebrow */}
         <motion.div

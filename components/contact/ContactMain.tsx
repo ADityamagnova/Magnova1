@@ -98,7 +98,7 @@ export default function ContactMain() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
           {/* ── FORM ── */}
@@ -307,7 +307,7 @@ export default function ContactMain() {
                     background: 'rgba(14,32,56,0.5)',
                   }}
                 >
-                  <h3 className="font-display font-semibold text-white mb-5" style={{ fontSize: '1rem' }}>
+                  <h3 className="font-display font-semibold text-white mb-5" style={{ fontSize: '1.05rem' }}>
                     Company Information
                   </h3>
                   <div className="space-y-4">

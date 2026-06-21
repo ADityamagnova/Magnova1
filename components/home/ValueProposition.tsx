@@ -51,7 +51,7 @@ function PillarCard({
         <pillar.icon size={22} style={{ color: '#C89B3C' }} />
       </div>
       <div>
-        <h3 className="font-display text-xl font-semibold text-white mb-3">
+        <h3 className="font-display font-semibold text-white mb-3" style={{ fontSize: '1.05rem' }}>
           {pillar.title}
         </h3>
         <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
@@ -71,7 +71,7 @@ export default function ValueProposition() {
       className="py-32"
       style={{ background: 'linear-gradient(180deg, #061426 0%, #08192e 100%)' }}
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Section header */}
         <motion.div
           ref={ref}

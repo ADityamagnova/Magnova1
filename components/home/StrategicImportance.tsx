@@ -19,7 +19,7 @@ export default function StrategicImportance() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
 
           <FadeIn>

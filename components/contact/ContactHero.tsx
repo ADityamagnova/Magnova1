@@ -23,7 +23,7 @@ export default function ContactHero() {
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 text-center py-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center py-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

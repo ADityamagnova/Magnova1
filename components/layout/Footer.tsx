@@ -16,6 +16,8 @@ const industryLinks = [
   { label: 'Renewable Energy',    href: '/technology#applications' },
   { label: 'Defense Systems',     href: '/technology#applications' },
   { label: 'Industrial Automation', href: '/technology#applications' },
+  { label: 'Aerospace Applications', href: '/technology#applications' },
+  { label: 'Advanced Manufacturing', href: '/technology#applications' },
 ];
 
 function FooterLogo({ className = '' }: { className?: string }) {
@@ -37,7 +39,7 @@ export default function Footer() {
       }}
       role="contentinfo"
     >
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
 
           {/* Brand column */}
@@ -147,7 +149,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs" style={{ color: '#253545' }}>
             © {new Date().getFullYear()} Magnova. All rights reserved.
           </p>

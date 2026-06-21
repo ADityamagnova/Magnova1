@@ -54,7 +54,7 @@ export default function ProductPortfolio() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <FadeIn className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />
@@ -89,7 +89,7 @@ export default function ProductPortfolio() {
                     >
                       <Icon size={17} style={{ color: '#C9963A' }} aria-hidden="true" />
                     </div>
-                    <h3 className="font-display font-semibold text-white" style={{ fontSize: '1rem' }}>
+                    <h3 className="font-display font-semibold text-white" style={{ fontSize: '1.05rem' }}>
                       {p.title}
                     </h3>
                   </div>
