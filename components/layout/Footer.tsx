@@ -20,15 +20,12 @@ const industryLinks = [
 
 function FooterLogo() {
   return (
-    <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <circle cx="16" cy="16" r="14.5" stroke="#C9963A" strokeWidth="1" opacity="0.35" />
-      <path d="M16 3 L29 16 L16 29 L3 16 Z" stroke="#C9963A" strokeWidth="1.2" fill="none" />
-      <circle cx="16" cy="16" r="3.5" fill="#C9963A" />
-      <line x1="16" y1="12.5" x2="16" y2="3"  stroke="#C9963A" strokeWidth="0.8" opacity="0.55" />
-      <line x1="19.5" y1="16" x2="29" y2="16" stroke="#C9963A" strokeWidth="0.8" opacity="0.55" />
-      <line x1="16" y1="19.5" x2="16" y2="29" stroke="#C9963A" strokeWidth="0.8" opacity="0.55" />
-      <line x1="12.5" y1="16" x2="3" y2="16"  stroke="#C9963A" strokeWidth="0.8" opacity="0.55" />
-    </svg>
+    <img
+      src="/logo-icon.png"
+      alt="Magnova Logo"
+      style={{ width: 30, height: 30, objectFit: 'contain' }}
+      className="transition-transform duration-300 group-hover:scale-105"
+    />
   );
 }
 
