@@ -71,7 +71,7 @@ export default function ValueProposition() {
       className="py-32"
       style={{ background: 'linear-gradient(180deg, #061426 0%, #08192e 100%)' }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
         {/* Section header */}
         <motion.div
           ref={ref}

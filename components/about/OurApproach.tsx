@@ -43,7 +43,7 @@ export default function OurApproach() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <FadeIn className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />
@@ -58,7 +58,7 @@ export default function OurApproach() {
           </h2>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((p) => {
             const Icon = p.icon;
             return (

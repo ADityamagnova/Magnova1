@@ -54,7 +54,7 @@ export default function ProductPortfolio() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
         <FadeIn className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />
@@ -73,7 +73,7 @@ export default function ProductPortfolio() {
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((p) => {
             const Icon = p.icon;
             return (

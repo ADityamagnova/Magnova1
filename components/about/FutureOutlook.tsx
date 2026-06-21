@@ -18,12 +18,13 @@ export default function FutureOutlook() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="max-w-4xl">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 text-center">
+        <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-6">
               <div className="gold-line w-10" />
               <span className="eyebrow">Future Outlook</span>
+              <div className="gold-line w-10" />
             </div>
           </FadeIn>
 

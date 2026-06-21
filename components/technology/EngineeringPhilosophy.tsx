@@ -41,11 +41,12 @@ export default function EngineeringPhilosophy() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <FadeIn className="mb-14">
-          <div className="flex items-center gap-4 mb-6">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+        <FadeIn className="text-center mb-14">
+          <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />
             <span className="eyebrow">Engineering Philosophy</span>
+            <div className="gold-line w-10" />
           </div>
           <h2
             className="font-display font-bold text-white"

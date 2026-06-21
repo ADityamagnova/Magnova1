@@ -45,7 +45,7 @@ export default function Capabilities() {
 
   return (
     <section className="py-32" style={{ background: '#061426' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           ref={ref}

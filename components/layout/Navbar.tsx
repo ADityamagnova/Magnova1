@@ -51,7 +51,7 @@ export default function Navbar() {
         }}
         role="banner"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between" style={{ height: 'var(--nav-h)' }}>
 
             {/* Logo */}
