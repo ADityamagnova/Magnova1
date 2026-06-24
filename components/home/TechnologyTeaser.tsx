@@ -15,7 +15,7 @@ export default function TechnologyTeaser() {
   return (
     <section
       ref={ref}
-      className="py-32 relative overflow-hidden"
+      className="py-32 relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: 'linear-gradient(180deg, #061426 0%, #08192e 50%, #061426 100%)' }}
     >
       {/* Background glow */}
@@ -27,7 +27,7 @@ export default function TechnologyTeaser() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <motion.div

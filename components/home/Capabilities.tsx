@@ -44,8 +44,8 @@ export default function Capabilities() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-32" style={{ background: '#061426' }}>
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+    <section className="py-32 flex flex-col items-center w-full" style={{ background: '#061426' }}>
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Header */}
         <motion.div
           ref={ref}

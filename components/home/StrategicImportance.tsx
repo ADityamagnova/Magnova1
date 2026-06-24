@@ -6,7 +6,7 @@ export default function StrategicImportance() {
   return (
     <section
       id="strategic-importance"
-      className="section relative overflow-hidden"
+      className="section relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: 'linear-gradient(180deg, #060f1c 0%, #0a1929 50%, #060f1c 100%)' }}
     >
       {/* Subtle radial glow */}
@@ -19,7 +19,7 @@ export default function StrategicImportance() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
 
           <FadeIn>
