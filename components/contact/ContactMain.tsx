@@ -86,7 +86,7 @@ export default function ContactMain() {
   return (
     <section
       id="contact-main"
-      className="section relative overflow-hidden"
+      className="section relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: '#060f1c' }}
     >
       <div
@@ -98,7 +98,7 @@ export default function ContactMain() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
           {/* ── FORM ── */}

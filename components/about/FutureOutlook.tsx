@@ -6,7 +6,7 @@ export default function FutureOutlook() {
   return (
     <section
       id="future-outlook"
-      className="section-sm relative overflow-hidden"
+      className="section-sm relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: '#0a1929' }}
     >
       <div
@@ -18,7 +18,7 @@ export default function FutureOutlook() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 text-center">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 text-center">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="flex items-center justify-center gap-4 mb-6">

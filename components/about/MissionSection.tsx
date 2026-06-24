@@ -6,7 +6,7 @@ export default function MissionSection() {
   return (
     <section
       id="mission"
-      className="section relative overflow-hidden"
+      className="section relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: '#060f1c' }}
     >
       <div
@@ -18,7 +18,7 @@ export default function MissionSection() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left text */}

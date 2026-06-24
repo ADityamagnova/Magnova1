@@ -15,7 +15,7 @@ export default function WhyItMatters() {
   return (
     <section
       id="why-it-matters"
-      className="section relative overflow-hidden"
+      className="section relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: '#0a1929' }}
     >
       <div
@@ -27,7 +27,7 @@ export default function WhyItMatters() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <FadeIn>
             <div className="flex items-center justify-center gap-4 mb-6">

@@ -31,7 +31,7 @@ export default function OurApproach() {
   return (
     <section
       id="our-approach"
-      className="section relative overflow-hidden"
+      className="section relative overflow-hidden flex flex-col items-center w-full"
       style={{ background: '#060f1c' }}
     >
       <div
@@ -43,7 +43,7 @@ export default function OurApproach() {
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         <FadeIn className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />
