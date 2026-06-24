@@ -8,7 +8,7 @@ export default function HomeCTA() {
   return (
     <section
       id="home-cta"
-      className="section-sm relative overflow-hidden"
+      className="section-sm relative overflow-hidden flex flex-col items-center justify-center text-center w-full"
       style={{ background: '#0a1929' }}
     >
       {/* Decorative corner lines */}
@@ -31,7 +31,7 @@ export default function HomeCTA() {
         }}
       />
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center relative">
+      <div className="max-w-4xl w-full mx-auto px-6 md:px-12 lg:px-16 text-center relative z-10">
         <FadeIn>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="gold-line w-10" />
@@ -42,7 +42,7 @@ export default function HomeCTA() {
 
         <FadeIn delay={0.1}>
           <h2
-            className="font-display font-bold text-white mb-5"
+            className="font-display font-bold text-white mb-5 text-center"
             style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15 }}
           >
             Ready to Discuss a{' '}
@@ -52,7 +52,7 @@ export default function HomeCTA() {
 
         <FadeIn delay={0.2}>
           <p
-            className="text-base leading-relaxed mb-10 max-w-xl mx-auto"
+            className="text-base leading-relaxed mb-10 max-w-xl mx-auto text-center"
             style={{ color: 'rgba(255,255,255,0.5)' }}
           >
             Connect with Magnova regarding partnership opportunities, business inquiries,
