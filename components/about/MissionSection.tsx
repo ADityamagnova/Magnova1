@@ -7,7 +7,7 @@ export default function MissionSection() {
     <section
       id="mission"
       className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: '#060f1c' }}
+      style={{ background: '#060f1c', paddingTop: '3.5rem' }}
     >
       <div
         className="absolute inset-0 pointer-events-none"

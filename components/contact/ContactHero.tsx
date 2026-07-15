@@ -7,7 +7,7 @@ export default function ContactHero() {
     <section
       className="relative flex items-center justify-center overflow-hidden"
       style={{
-        minHeight: '48vh',
+        minHeight: '32vh',
         background: 'linear-gradient(160deg, #060f1c 0%, #0e2038 50%, #060f1c 100%)',
         paddingTop: 'var(--nav-h)',
       }}
