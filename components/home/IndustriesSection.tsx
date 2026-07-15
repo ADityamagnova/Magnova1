@@ -1,6 +1,7 @@
 'use client';
 
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/Animate';
+import { motion } from 'framer-motion';
 import {
   Zap,
   Wind,
@@ -75,7 +76,7 @@ export default function IndustriesSection() {
             <div className="gold-line w-10" />
           </div>
           <h2
-            className="font-display font-bold text-white"
+            className="font-display font-bold text-white mb-4"
             style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15 }}
           >
             Industries We Support
@@ -89,43 +90,51 @@ export default function IndustriesSection() {
             const Icon = ind.icon;
             return (
               <StaggerItem key={ind.id}>
-                <div
+                <motion.div
                   id={ind.id}
-                  className="premium-card rounded-sm p-8 flex flex-col gap-4 h-full group"
+                  className="premium-card rounded-sm p-8 flex flex-col gap-5 h-full group transition-all duration-300"
+                  whileHover={{ y: -6, scale: 1.015 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.06)',
+                    background: 'linear-gradient(135deg, rgba(11,26,46,0.7) 0%, rgba(6,15,28,0.95) 100%)',
+                  }}
                 >
                   {/* Icon */}
                   <div
-                    className="w-11 h-11 rounded-sm flex items-center justify-center transition-colors duration-300"
+                    className="w-12 h-12 rounded-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9963A]"
                     style={{
                       background:   'rgba(201,150,58,0.08)',
-                      border:       '1px solid rgba(201,150,58,0.15)',
+                      border:       '1px solid rgba(201,150,58,0.18)',
                     }}
                   >
-                    <Icon size={18} style={{ color: '#C9963A' }} aria-hidden="true" />
+                    <Icon size={20} className="transition-colors duration-300 group-hover:text-[#060f1c]" style={{ color: '#C9963A' }} aria-hidden="true" />
                   </div>
 
-                  <h3
-                    className="font-display font-semibold text-white transition-colors duration-300 group-hover:text-gold"
-                    style={{ fontSize: '1.05rem' }}
-                  >
-                    {ind.label}
-                  </h3>
+                  <div className="flex flex-col gap-2">
+                    <h3
+                      className="font-display font-semibold text-white transition-colors duration-300 group-hover:text-gold"
+                      style={{ fontSize: '1.1rem' }}
+                    >
+                      {ind.label}
+                    </h3>
 
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.42)' }}>
-                    {ind.description}
-                  </p>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                      {ind.description}
+                    </p>
+                  </div>
 
                   {/* Bottom gold accent line (appears on hover) */}
                   <div
                     className="mt-auto pt-4"
-                    style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
+                    style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}
                   >
                     <div
                       className="h-px w-0 group-hover:w-full transition-all duration-500"
                       style={{ background: 'linear-gradient(90deg, #C9963A, transparent)' }}
                     />
                   </div>
-                </div>
+                </motion.div>
               </StaggerItem>
             );
           })}

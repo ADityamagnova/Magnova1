@@ -68,70 +68,73 @@ export default function VisionSection() {
             </FadeIn>
           </div>
 
-          {/* Right: animated visual */}
+          {/* Right: animated visual with India map backdrop */}
           <FadeIn delay={0.2} direction="left" className="flex items-center justify-center w-full">
-            <div className="relative">
-              {/* Outer ring */}
-              <div
-                className="relative mx-auto scale-[0.8] sm:scale-100 origin-center my-4"
-                style={{ width: 340, height: 340 }}
-              >
-                {/* Pulsing rings */}
-                {[1, 0.7, 0.45].map((scale, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      border:    '1px solid rgba(201,150,58,0.2)',
-                      transform: `scale(${scale})`,
-                      top: '50%', left: '50%',
-                      width: '100%', height: '100%',
-                      marginTop: '-50%', marginLeft: '-50%',
-                    }}
-                    animate={{ opacity: [0.2, 0.6, 0.2], scale: [scale, scale * 1.02, scale] }}
-                    transition={{ duration: 3 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.8 }}
-                  />
-                ))}
-
-                {/* Centre card */}
-                <div
-                  className="absolute inset-0 m-auto flex flex-col items-center justify-center text-center"
-                  style={{ width: '58%', height: '58%', top: '21%', left: '21%' }}
-                >
-                  <svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <circle cx="16" cy="16" r="14.5" stroke="#C9963A" strokeWidth="1" opacity="0.35" />
-                    <path d="M16 3 L29 16 L16 29 L3 16 Z" stroke="#C9963A" strokeWidth="1.2" fill="none" />
-                    <circle cx="16" cy="16" r="3.5" fill="#C9963A" />
-                  </svg>
-                  <p className="eyebrow mt-3" style={{ fontSize: '0.6rem' }}>MAGNOVA</p>
-                </div>
-
-                {/* Pillar badges */}
-                {pillars.map((p, i) => {
-                  const angles = [-90, 30, 150];
-                  const angle  = (angles[i] * Math.PI) / 180;
-                  const r      = 148;
-                  const cx     = 170, cy = 170;
-                  const x      = cx + r * Math.cos(angle) - 52;
-                  const y      = cy + r * Math.sin(angle) - 28;
-                  return (
+            <div className="relative w-full max-w-[450px]">
+              {/* Gold bordered container holding the image */}
+              <div className="image-frame-gold w-full aspect-square relative rounded-sm flex items-center justify-center overflow-hidden">
+                <img
+                  src="/about-india.png"
+                  alt="India Strategic Manufacturing Location Map"
+                  className="absolute inset-0 w-full h-full object-cover opacity-25 filter grayscale contrast-125"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060f1c] via-transparent to-transparent opacity-60" />
+                
+                {/* Orbiting rings layered over the image */}
+                <div className="absolute inset-0 flex items-center justify-center scale-90 sm:scale-100">
+                  {/* Pulse rings */}
+                  {[1, 0.7, 0.45].map((scale, i) => (
                     <motion.div
-                      key={p.value}
-                      className="absolute glass-gold rounded-sm px-3 py-2 text-center"
-                      style={{ left: x, top: y, minWidth: 104 }}
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{
-                        duration: 4 + i,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: i * 1.2,
+                      key={i}
+                      className="absolute rounded-full"
+                      style={{
+                        border:    '1px solid rgba(201,150,58,0.22)',
+                        transform: `scale(${scale})`,
+                        width: 280,
+                        height: 280,
                       }}
-                    >
-                      <p className="text-xs font-bold" style={{ color: '#C9963A' }}>{p.value}</p>
-                      <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.65rem' }}>{p.label}</p>
-                    </motion.div>
-                  );
-                })}
+                      animate={{ opacity: [0.2, 0.5, 0.2], scale: [scale, scale * 1.02, scale] }}
+                      transition={{ duration: 3.5 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.8 }}
+                    />
+                  ))}
+
+                  {/* Center core indicator */}
+                  <div className="absolute flex flex-col items-center justify-center text-center bg-[#060f1c]/90 backdrop-blur-sm border border-gold-border rounded-full w-28 h-28">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                      <circle cx="16" cy="16" r="14.5" stroke="#C9963A" strokeWidth="1" opacity="0.35" />
+                      <path d="M16 3 L29 16 L16 29 L3 16 Z" stroke="#C9963A" strokeWidth="1.2" fill="none" />
+                      <circle cx="16" cy="16" r="3.5" fill="#C9963A" />
+                    </svg>
+                    <p className="eyebrow mt-2" style={{ fontSize: '0.55rem', letterSpacing: '0.15em' }}>MAGNOVA</p>
+                  </div>
+
+                  {/* Floating Badges */}
+                  {pillars.map((p, i) => {
+                    const angles = [-90, 30, 150];
+                    const angle  = (angles[i] * Math.PI) / 180;
+                    const r      = 120;
+                    const cx     = 140, cy = 140;
+                    const x      = cx + r * Math.cos(angle) - 48;
+                    const y      = cy + r * Math.sin(angle) - 24;
+                    return (
+                      <motion.div
+                        key={p.value}
+                        className="absolute glass-gold rounded-sm px-2.5 py-1.5 text-center shadow-lg"
+                        style={{ left: x, top: y, minWidth: 96 }}
+                        animate={{ y: [0, -4, 0] }}
+                        transition={{
+                          duration: 4.5 + i,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                          delay: i * 1.2,
+                        }}
+                      >
+                        <p className="text-xs font-bold" style={{ color: '#C9963A', fontSize: '0.7rem' }}>{p.value}</p>
+                        <p className="text-[0.6rem] mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{p.label}</p>
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </FadeIn>

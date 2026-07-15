@@ -110,6 +110,16 @@ export default function Hero() {
               'radial-gradient(ellipse 80% 70% at 50% 40%, #0e2038 0%, #060f1c 65%)',
           }}
         />
+        {/* Real magnet image backdrop for authenticity */}
+        <div 
+          className="absolute inset-0 mix-blend-screen opacity-[0.12] pointer-events-none"
+          style={{
+            backgroundImage: "url('/hero-magnetic.png')",
+            backgroundPosition: 'center 40%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
         {/* Gold glow at center top */}
         <div
           className="absolute inset-0"

@@ -531,6 +531,25 @@ export default function ProductsMain() {
             background: #c9a84c;
             color: #070d1a;
           }
+          .btn-gold {
+            background: #c9a84c;
+            color: #070d1a;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border: 1px solid #c9a84c;
+            display: inline-block;
+          }
+          .btn-gold:hover {
+            background: transparent;
+            color: #c9a84c;
+          }
 
           /* Props Grid */
           .props-grid {
@@ -892,9 +911,17 @@ export default function ProductsMain() {
           {/* CTA Bar */}
           <div className="table-cta-bar">
             <span>Need Magnova-certified lot data, CoC, or custom grade specifications?</span>
-            <Link href="/contact" className="btn-outline-gold">
-              Request Full Datasheet →
-            </Link>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <a href="/magnova_magnet_datasheet.pdf" download className="btn-gold">
+                Download PDF Datasheet
+              </a>
+              <a href="/magnova_grade_chart_colorful.pdf" download className="btn-outline-gold">
+                Download Colorful GBD Chart
+              </a>
+              <Link href="/contact" className="btn-outline-gold" style={{ border: 'none', paddingLeft: 0, paddingRight: 0 }}>
+                Request Custom Specs →
+              </Link>
+            </div>
           </div>
 
           {/* Side by side grids */}

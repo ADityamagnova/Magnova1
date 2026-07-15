@@ -54,34 +54,28 @@ export default function MissionSection() {
             </FadeIn>
           </div>
 
-          {/* Right: decorative panel */}
+          {/* Right: Real manufacturing image with overlayed quote */}
           <FadeIn delay={0.2} direction="left">
-            <div
-              className="relative rounded-sm overflow-hidden"
-              style={{
-                border:     '1px solid rgba(201,150,58,0.12)',
-                background: 'linear-gradient(135deg, #0e2038 0%, #0b1a2e 100%)',
-                padding:    '3rem',
-              }}
-            >
-              {/* Corner marks */}
-              {[
-                'top-4 left-4', 'top-4 right-4',
-                'bottom-4 left-4', 'bottom-4 right-4',
-              ].map((pos) => (
-                <div key={pos} className={`absolute ${pos} w-4 h-4`} aria-hidden="true">
-                  <div className="absolute top-0 left-0 w-full h-px" style={{ background: '#C9963A', opacity: 0.4 }} />
-                  <div className="absolute top-0 left-0 h-full w-px" style={{ background: '#C9963A', opacity: 0.4 }} />
+            <div className="image-frame-gold aspect-[4/3] w-full relative group">
+              <img
+                src="/manufacturing.png"
+                alt="Magnova Advanced Permanent Magnet Manufacturing Facility"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div 
+                className="absolute inset-0 flex flex-col justify-end p-8"
+                style={{
+                  background: 'linear-gradient(to top, rgba(6,15,28,0.9) 0%, rgba(6,15,28,0.3) 65%, transparent 100%)',
+                }}
+              >
+                <blockquote className="font-display text-xl md:text-2xl font-medium italic leading-snug text-white mb-5">
+                  "Critical industrial technologies require strong domestic manufacturing foundations."
+                </blockquote>
+
+                <div className="flex items-center gap-3">
+                  <div style={{ width: 24, height: 1, background: 'linear-gradient(90deg, #C9963A, transparent)' }} />
+                  <span className="eyebrow" style={{ fontSize: '0.58rem', letterSpacing: '0.15em' }}>Magnova Founding Principle</span>
                 </div>
-              ))}
-
-              <blockquote className="font-display text-2xl font-medium italic leading-snug text-white mb-6">
-                "Critical industrial technologies require strong domestic manufacturing foundations."
-              </blockquote>
-
-              <div className="flex items-center gap-3">
-                <div style={{ width: 32, height: 1, background: 'linear-gradient(90deg, #C9963A, transparent)' }} />
-                <span className="eyebrow" style={{ fontSize: '0.6rem' }}>Magnova Founding Principle</span>
               </div>
             </div>
           </FadeIn>

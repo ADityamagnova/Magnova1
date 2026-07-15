@@ -1,6 +1,7 @@
 'use client';
 
 import { FadeIn } from '@/components/ui/Animate';
+import { motion } from 'framer-motion';
 
 export default function StrategicImportance() {
   return (
@@ -57,44 +58,62 @@ export default function StrategicImportance() {
           {[
             {
               id: 'pillar-supply',
+              num: '01',
               title: 'Supply Chain Resilience',
               text:  'Strengthening domestic rare-earth magnet capabilities to reduce dependence on global supply constraints.',
             },
             {
               id: 'pillar-tech',
+              num: '02',
               title: 'Technological Self-Reliance',
               text:  'Advanced manufacturing designed to meet the precision demands of next-generation industrial applications.',
             },
             {
               id: 'pillar-impact',
+              num: '03',
               title: 'Strategic Industrial Impact',
               text:  'Aligning manufacturing capacity with national priorities and the long-term needs of high-growth sectors.',
             },
           ].map((item, i) => (
             <FadeIn key={item.id} delay={0.15 + i * 0.1}>
-              <div
+              <motion.div
                 id={item.id}
-                className="premium-card p-8 rounded-sm h-full"
+                className="premium-card p-8 rounded-sm h-full flex flex-col justify-between"
+                whileHover={{ y: -6, scale: 1.015 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                style={{
+                  border: '1px solid rgba(201,150,58,0.12)',
+                  background: 'linear-gradient(135deg, rgba(14,25,41,0.7) 0%, rgba(6,15,28,0.9) 100%)',
+                }}
               >
-                {/* Gold accent top-bar */}
-                <div
-                  className="mb-5"
-                  style={{
-                    width: 36,
-                    height: 2,
-                    background: 'linear-gradient(90deg, #C9963A, #E8B84B)',
-                  }}
-                />
-                <h3
-                  className="font-display font-semibold text-white mb-3"
-                  style={{ fontSize: '1.05rem' }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                  {item.text}
-                </p>
-              </div>
+                <div>
+                  <div className="flex justify-between items-center mb-6">
+                    {/* Gold accent top-bar */}
+                    <div
+                      style={{
+                        width: 36,
+                        height: 2,
+                        background: 'linear-gradient(90deg, #C9963A, #E8B84B)',
+                      }}
+                    />
+                    <span 
+                      className="font-display font-bold italic text-sm"
+                      style={{ color: 'rgba(201,150,58,0.3)', letterSpacing: '0.1em' }}
+                    >
+                      {item.num}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-display font-semibold text-white mb-3"
+                    style={{ fontSize: '1.1rem' }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    {item.text}
+                  </p>
+                </div>
+              </motion.div>
             </FadeIn>
           ))}
         </div>

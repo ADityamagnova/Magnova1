@@ -31,55 +31,57 @@ export default function HomeCTA() {
         }}
       />
 
-      <div className="max-w-4xl w-full mx-auto px-6 md:px-12 lg:px-16 text-center relative z-10">
+      <div className="max-w-4xl w-full mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         <FadeIn>
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="gold-line w-10" />
-            <span className="eyebrow">Get In Touch</span>
-            <div className="gold-line w-10" />
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2
-            className="font-display font-bold text-white mb-5 text-center"
-            style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15 }}
+          <div
+            className="premium-card rounded-sm p-10 md:p-16 text-center transition-all duration-300 hover:border-gold-light"
+            style={{
+              background: 'linear-gradient(135deg, rgba(14,25,41,0.7) 0%, rgba(6,15,28,0.9) 100%)',
+              border: '1px solid rgba(201,150,58,0.18)',
+              boxShadow: '0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,150,58,0.06)',
+            }}
           >
-            Ready to Discuss a{' '}
-            <span className="gold-text italic">Partnership?</span>
-          </h2>
-        </FadeIn>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="gold-line w-10" />
+              <span className="eyebrow">Get In Touch</span>
+              <div className="gold-line w-10" />
+            </div>
 
-        <FadeIn delay={0.2}>
-          <p
-            className="text-base leading-relaxed mb-10 max-w-xl mx-auto text-center"
-            style={{ color: 'rgba(255,255,255,0.5)' }}
-          >
-            Connect with Magnova regarding partnership opportunities, business inquiries,
-            or investor discussions. We welcome strategic conversations.
-          </p>
-        </FadeIn>
+            <h2
+              className="font-display font-bold text-white mb-5 text-center"
+              style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15 }}
+            >
+              Ready to Discuss a <span className="gold-text italic">Partnership?</span>
+            </h2>
 
-        <FadeIn delay={0.3}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              id="home-cta-primary"
-              className="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-sm group"
+            <p
+              className="text-base leading-relaxed mb-10 max-w-xl mx-auto text-center"
+              style={{ color: 'rgba(255,255,255,0.5)' }}
             >
-              Contact Us
-              <ArrowRight
-                size={15}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </Link>
-            <Link
-              href="/technology"
-              id="home-cta-secondary"
-              className="btn-outline inline-flex items-center gap-2 px-10 py-4 rounded-sm"
-            >
-              Explore Technology
-            </Link>
+              Connect with Magnova regarding partnership opportunities, business inquiries,
+              or investor discussions. We welcome strategic conversations.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                id="home-cta-primary"
+                className="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-sm group"
+              >
+                Contact Us
+                <ArrowRight
+                  size={15}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+              <Link
+                href="/technology"
+                id="home-cta-secondary"
+                className="btn-outline inline-flex items-center gap-2 px-10 py-4 rounded-sm"
+              >
+                Explore Technology
+              </Link>
+            </div>
           </div>
         </FadeIn>
       </div>

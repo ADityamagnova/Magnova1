@@ -67,12 +67,21 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-bold text-white"
+          className="font-display font-bold text-white mb-6"
           style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', lineHeight: 1.1 }}
         >
-          About{' '}
-          <span className="gold-text italic">Magnova</span>
+          About <span className="gold-text italic">Magnova</span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="text-lg max-w-2xl mx-auto leading-relaxed"
+          style={{ color: 'rgba(255,255,255,0.5)' }}
+        >
+          Establishing the critical foundations of advanced rare-earth permanent magnet manufacturing to support strategic industries.
+        </motion.p>
       </div>
     </section>
   );
