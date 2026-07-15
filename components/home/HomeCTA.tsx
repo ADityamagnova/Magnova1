@@ -30,15 +30,15 @@ export default function HomeCTA() {
             'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,150,58,0.05) 0%, transparent 70%)',
         }}
       />
-
       <div className="max-w-4xl w-full mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-        <FadeIn>
+        <FadeIn className="w-full">
           <div
-            className="premium-card rounded-sm p-10 md:p-16 text-center transition-all duration-300 hover:border-gold-light"
+            className="premium-card rounded-sm text-center transition-all duration-300 hover:border-gold-light"
             style={{
               background: 'linear-gradient(135deg, rgba(14,25,41,0.7) 0%, rgba(6,15,28,0.9) 100%)',
               border: '1px solid rgba(201,150,58,0.18)',
               boxShadow: '0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,150,58,0.06)',
+              padding: '4.5rem 2.5rem',
             }}
           >
             <div className="flex items-center justify-center gap-4 mb-6">

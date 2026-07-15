@@ -315,8 +315,8 @@ export default function ContactMain() {
                       {
                         icon:  Mail,
                         label: 'Email',
-                        value: 'contact@magnova.asia',
-                        href:  'mailto:contact@magnova.asia',
+                        value: "contact@magnova.asia\naditya.jha@magnova.asia",
+                        href:  'mailto:contact@magnova.asia,aditya.jha@magnova.asia',
                       },
                       {
                         icon:  Globe,
@@ -347,7 +347,7 @@ export default function ContactMain() {
                             {item.href ? (
                               <a
                                 href={item.href}
-                                className="text-sm transition-colors hover:text-white"
+                                className="text-sm transition-colors hover:text-white block whitespace-pre-line"
                                 style={{ color: 'rgba(255,255,255,0.65)' }}
                                 target={item.href.startsWith('http') ? '_blank' : undefined}
                                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}

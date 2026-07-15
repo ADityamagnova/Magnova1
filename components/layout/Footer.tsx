@@ -64,16 +64,27 @@ export default function Footer() {
                 <MapPin size={13} style={{ color: '#C9963A', marginTop: 3, flexShrink: 0 }} />
                 <span className="text-xs" style={{ color: '#4a5e74' }}>India</span>
               </div>
+
               <div className="flex items-start gap-3">
                 <Mail size={13} style={{ color: '#C9963A', marginTop: 3, flexShrink: 0 }} />
-                <a
-                  href="mailto:contact@magnova.asia"
-                  className="text-xs transition-colors hover:text-white"
-                  style={{ color: '#4a5e74' }}
-                >
-                  contact@magnova.asia
-                </a>
+                <div className="flex flex-col">
+                  <a
+                    href="mailto:contact@magnova.asia,aditya.jha@magnova.asia"
+                    className="text-xs transition-colors hover:text-white"
+                    style={{ color: '#4a5e74' }}
+                  >
+                    contact@magnova.asia
+                  </a>
+                  <a
+                    href="mailto:contact@magnova.asia,aditya.jha@magnova.asia"
+                    className="text-xs transition-colors hover:text-white mt-1"
+                    style={{ color: '#4a5e74' }}
+                  >
+                    aditya.jha@magnova.asia
+                  </a>
+                </div>
               </div>
+
               <div className="flex items-start gap-3">
                 <Globe size={13} style={{ color: '#C9963A', marginTop: 3, flexShrink: 0 }} />
                 <a

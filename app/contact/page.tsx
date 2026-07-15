@@ -5,7 +5,7 @@ import ContactMain from '@/components/contact/ContactMain';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Connect with Magnova regarding partnership opportunities, business inquiries, or investor discussions. Reach us at contact@magnova.asia.',
+    'Connect with Magnova regarding partnership opportunities, business inquiries, or investor discussions. Reach us at contact@magnova.asia or aditya.jha@magnova.asia.',
   openGraph: {
     title: 'Get In Touch — Magnova',
     description:
