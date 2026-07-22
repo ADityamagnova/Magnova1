@@ -45,9 +45,9 @@ export default function Navbar() {
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
-          background:    scrolled ? 'rgba(6, 15, 28, 0.94)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(20px)'            : 'none',
-          borderBottom:  scrolled ? '1px solid rgba(201,150,58,0.10)' : '1px solid transparent',
+          background:    scrolled ? 'rgba(8, 17, 29, 0.85)' : 'rgba(2, 5, 11, 0.45)',
+          backdropFilter: 'blur(20px)',
+          borderBottom:  '1px solid rgba(77, 169, 255, 0.08)',
         }}
         role="banner"
       >
@@ -58,7 +58,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-3.5 group py-2" aria-label="Magnova — Home">
               <MagnovaLogo />
               <span
-                className="font-sans text-lg font-bold tracking-widest text-white transition-colors duration-300 group-hover:text-gold"
+                className="font-sans text-lg font-bold tracking-widest text-white transition-colors duration-300 group-hover:text-[#D6A84A]"
                 style={{ letterSpacing: '0.24em', fontFamily: "'Inter', sans-serif" }}
               >
                 MAGNOVA
@@ -75,11 +75,11 @@ export default function Navbar() {
                     href={link.href}
                     className="relative group"
                     style={{
-                      fontSize:      '0.72rem',
-                      fontWeight:    600,
-                      letterSpacing: '0.14em',
+                      fontSize:      '14px',
+                      fontWeight:    500,
+                      letterSpacing: '2px',
                       textTransform: 'uppercase',
-                      color: active ? '#C9963A' : 'rgba(255,255,255,0.65)',
+                      color: active ? '#D6A84A' : 'rgba(255,255,255,0.65)',
                       transition: 'color 0.3s ease',
                     }}
                     aria-current={active ? 'page' : undefined}
@@ -88,14 +88,14 @@ export default function Navbar() {
                     <span
                       className="absolute -bottom-1 left-0 h-px transition-all duration-300"
                       style={{
-                        background: 'linear-gradient(90deg, #C9963A, #E8B84B)',
+                        background: 'linear-gradient(90deg, #D6A84A, #F5CD6C)',
                         width: active ? '100%' : '0%',
                       }}
                     />
                     <span
                       className="absolute -bottom-1 left-0 h-px opacity-0 group-hover:opacity-100 group-hover:w-full transition-all duration-300"
                       style={{
-                        background: 'linear-gradient(90deg, #C9963A, #E8B84B)',
+                        background: 'linear-gradient(90deg, #D6A84A, #F5CD6C)',
                         width: '0%',
                       }}
                     />

@@ -7,8 +7,8 @@ export default function StrategicImportance() {
   return (
     <section
       id="strategic-importance"
-      className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: 'linear-gradient(180deg, #02050B 0%, #08111D 50%, #02050B 100%)' }}
+      className="section relative overflow-hidden flex flex-col items-center w-full bg-transparent"
+      style={{ background: 'transparent' }}
     >
       {/* Subtle radial glow */}
       <div

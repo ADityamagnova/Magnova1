@@ -8,8 +8,8 @@ export default function HomeCTA() {
   return (
     <section
       id="home-cta"
-      className="section-sm relative overflow-hidden flex flex-col items-center justify-center text-center w-full"
-      style={{ background: '#02050B' }}
+      className="section-sm relative overflow-hidden flex flex-col items-center justify-center text-center w-full bg-transparent"
+      style={{ background: 'transparent' }}
     >
       {/* Decorative corner lines */}
       <div className="absolute top-0 left-0 w-48 h-48 pointer-events-none" aria-hidden="true">

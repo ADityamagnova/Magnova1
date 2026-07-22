@@ -1,9 +1,5 @@
 import type { Metadata } from 'next';
-import Hero from '@/components/home/Hero';
-import StrategicImportance from '@/components/home/StrategicImportance';
-import IndustriesSection from '@/components/home/IndustriesSection';
-import VisionSection from '@/components/home/VisionSection';
-import HomeCTA from '@/components/home/HomeCTA';
+import HomeMain from '@/components/home/HomeMain';
 
 export const metadata: Metadata = {
   title: 'Magnova — Advanced Permanent Magnet Manufacturing',
@@ -18,13 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero />
-      <StrategicImportance />
-      <IndustriesSection />
-      <VisionSection />
-      <HomeCTA />
-    </>
-  );
+  return <HomeMain />;
 }

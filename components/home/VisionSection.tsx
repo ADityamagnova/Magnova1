@@ -13,8 +13,8 @@ export default function VisionSection() {
   return (
     <section
       id="vision"
-      className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: '#02050B' }}
+      className="section relative overflow-hidden flex flex-col items-center w-full bg-transparent"
+      style={{ background: 'transparent' }}
     >
       {/* Central radial */}
       <div

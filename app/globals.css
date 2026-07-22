@@ -318,3 +318,13 @@ body {
 .transition-premium {
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+/* Hide default cursor on desktop when WebGL custom magnetic cursor is active */
+@media (min-width: 1024px) {
+  html, body, main, #hero-section, #strategic-importance, #industries, #vision, #home-cta {
+    cursor: none !important;
+  }
+  a, button, [role="button"], select, input, textarea, .btn-primary, .btn-outline, .premium-card {
+    cursor: none !important;
+  }
+}

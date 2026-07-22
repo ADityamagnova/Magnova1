@@ -54,8 +54,8 @@ export default function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: '#08111D' }}
+      className="section relative overflow-hidden flex flex-col items-center w-full bg-transparent"
+      style={{ background: 'transparent' }}
     >
       {/* Corner accent */}
       <div
