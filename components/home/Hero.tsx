@@ -99,7 +99,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="inline-flex items-center gap-3 mb-6 w-fit px-4 py-1.5 rounded-full"
+            className="inline-flex items-center gap-3 mb-10 w-fit px-4 py-1.5 rounded-full"
             style={{
               background: 'rgba(77, 169, 255, 0.05)',
               border: '1px solid rgba(77, 169, 255, 0.18)',
@@ -118,24 +118,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[2.6rem] sm:text-[3.8rem] md:text-[80px] font-bold text-white tracking-[-0.02em] mb-6"
+            className="text-[2.6rem] sm:text-[3.8rem] md:text-[80px] font-bold text-white tracking-[-0.02em] mb-12"
             style={{
               fontFamily: "'Inter', sans-serif",
-              lineHeight: '94%',
+              lineHeight: '1.15',
             }}
           >
             Building India's Future of{' '}
-            <span className="gold-text block py-2" style={{ fontFamily: "'Inter', sans-serif", fontStyle: 'normal' }}>
+            <span className="gold-text block py-3.5" style={{ fontFamily: "'Inter', sans-serif", fontStyle: 'normal' }}>
               Advanced Permanent Magnet Manufacturing
             </span>
           </motion.h1>
 
-          {/* Subtext Paragraph - Highly legible, clear white sans-serif font */}
+          {/* Subtext Paragraph - Highly legible, clear white/opacity sans-serif font */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="text-[18px] md:text-[20px] leading-[170%] max-w-[620px] text-white/95 mb-8"
+            className="text-[18px] md:text-[20px] leading-[175%] max-w-[620px] text-white/80 mb-16"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Magnova is establishing India's pioneer commercial-scale manufacturing campus for 
@@ -143,22 +143,22 @@ export default function Hero() {
           </motion.p>
 
           {/* Metrics Row - Presented clearly below subtext */}
-          <div className="grid grid-cols-4 gap-4 pt-6 pb-8 border-t border-white/10 mb-8">
+          <div className="grid grid-cols-4 gap-6 pt-10 pb-12 border-t border-white/10 mb-16">
             <div>
               <AnimatedCounter end={1200} suffix="+" />
-              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>TPA Capacity</p>
+              <p className="text-[10px] text-white/90 font-bold tracking-wider uppercase mt-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>TPA Capacity</p>
             </div>
             <div>
               <AnimatedCounter end={25} suffix=" Acre" />
-              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>Campus Size</p>
+              <p className="text-[10px] text-white/90 font-bold tracking-wider uppercase mt-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>Campus Size</p>
             </div>
             <div>
               <AnimatedCounter end={50} suffix="%" />
-              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>Capital Subsidy</p>
+              <p className="text-[10px] text-white/90 font-bold tracking-wider uppercase mt-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>Capital Subsidy</p>
             </div>
             <div>
               <AnimatedCounter end={2032} suffix="" />
-              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>IPO Roadmap</p>
+              <p className="text-[10px] text-white/90 font-bold tracking-wider uppercase mt-2.5" style={{ fontFamily: "'Inter', sans-serif" }}>IPO Roadmap</p>
             </div>
           </div>
 
@@ -167,7 +167,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="flex flex-col sm:flex-row items-center gap-6 mb-8"
+            className="flex flex-col sm:flex-row items-center gap-8 mb-16"
           >
             {/* Magnetic primary button wrapper */}
             <div
