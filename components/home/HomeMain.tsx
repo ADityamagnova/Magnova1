@@ -109,8 +109,8 @@ export default function HomeMain() {
     // Rounded cylinder geometry or box representation representing a highly-polished bar magnet
     // We will build a polished chrome block with a gold-plated North Pole and silver-plated South Pole
     const segmentCount = 32;
-    const radius = 0.55;
-    const halfHeight = 0.9;
+    const radius = 0.75;
+    const halfHeight = 1.2;
 
     // Gold Top Half (North Pole)
     const nGeom = new THREE.CylinderGeometry(radius, radius, halfHeight, segmentCount);
@@ -205,7 +205,7 @@ export default function HomeMain() {
       const start = new THREE.Vector3(0, halfHeight, 0);
       const end = new THREE.Vector3(0, -halfHeight, 0);
 
-      const distance = 2.4 + (i % 3) * 0.4;
+      const distance = 3.2 + (i % 3) * 0.5;
       const mid = new THREE.Vector3(
         Math.cos(angle) * distance,
         0,
@@ -387,7 +387,7 @@ export default function HomeMain() {
         const start = new THREE.Vector3(0, halfHeight, 0);
         const end = new THREE.Vector3(0, -halfHeight, 0);
 
-        const distance = 2.4 + (lineIdx % 3) * 0.4;
+        const distance = 3.2 + (lineIdx % 3) * 0.5;
         const mid = new THREE.Vector3(
           Math.cos(angle) * distance + currentX * 0.6,
           currentY * 0.4,

@@ -250,8 +250,59 @@ export default function Hero() {
         </div>
 
         {/* RIGHT COLUMN: INTERACTIVE WEBGL CENTERPIECE (48% width) */}
-        {/* Acts as container to align with fixed WebGL canvas behind it */}
-        <div className="lg:col-span-5 w-full h-[300px] lg:h-[600px] pointer-events-none select-none relative" />
+        {/* Features floating technical data cards to balance visual weight */}
+        <div className="lg:col-span-5 w-full h-[400px] lg:h-[600px] relative flex flex-col justify-between py-12 pointer-events-none select-none">
+          
+          {/* Top-Right Floating Tech Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 0.85, x: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="self-end rounded-sm p-4 text-[0.68rem] font-mono tracking-wider text-left border"
+            style={{
+              borderColor: 'rgba(214, 168, 74, 0.15)',
+              background: 'rgba(8, 17, 29, 0.65)',
+              backdropFilter: 'blur(12px)',
+              width: '240px',
+              boxShadow: '0 0 20px rgba(214, 168, 74, 0.03)',
+            }}
+          >
+            <div className="flex justify-between items-center mb-2 border-b border-[#D6A84A]/10 pb-1.5">
+              <span className="text-[#D6A84A] font-bold">MATERIAL: REPM-N52</span>
+              <span className="text-white/40">SEC // 01</span>
+            </div>
+            <p className="text-white/70 mb-1">REMANENCE (Br): <span className="text-white font-bold">1.48 T</span></p>
+            <p className="text-white/70 mb-1">COERCIVITY (Hcb): <span className="text-white font-bold">&gt;820 kA/m</span></p>
+            <p className="text-white/70 font-sans">MAX ENERGY (BHmax): <span className="text-white font-bold">410 kJ/m³</span></p>
+          </motion.div>
+
+          {/* Spacer to let the 3D magnet shine */}
+          <div className="h-16" />
+
+          {/* Bottom-Right Floating Tech Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 0.85, x: 0 }}
+            transition={{ duration: 1, delay: 0.85 }}
+            className="self-start rounded-sm p-4 text-[0.68rem] font-mono tracking-wider text-left border"
+            style={{
+              borderColor: 'rgba(77, 169, 255, 0.15)',
+              background: 'rgba(8, 17, 29, 0.65)',
+              backdropFilter: 'blur(12px)',
+              width: '240px',
+              boxShadow: '0 0 20px rgba(77, 169, 255, 0.03)',
+            }}
+          >
+            <div className="flex justify-between items-center mb-2 border-b border-[#4DA9FF]/10 pb-1.5">
+              <span className="text-[#4DA9FF] font-bold">ENVIRONMENT CONTROL</span>
+              <span className="text-white/40">SEC // 02</span>
+            </div>
+            <p className="text-white/70 mb-1">ATMOSPHERE: <span className="text-white font-bold">ARGON [99.99%]</span></p>
+            <p className="text-white/70 mb-1">PRESSURE: <span className="text-white font-bold">1.02 bar</span></p>
+            <p className="text-white/70 font-sans">CELL TEMP: <span className="text-white font-bold">24.5 °C</span></p>
+          </motion.div>
+
+        </div>
 
       </div>
     </section>
