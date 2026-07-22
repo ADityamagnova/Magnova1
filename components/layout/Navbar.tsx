@@ -109,9 +109,22 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 id="nav-contact-cta"
-                className="btn-primary inline-flex items-center px-6 py-3 rounded-sm"
+                className="inline-flex items-center px-8 py-3.5 rounded-sm text-[0.72rem] font-bold tracking-widest text-[#02050B] transition-all duration-300 uppercase"
+                style={{
+                  background: 'linear-gradient(135deg, #D6A84A 0%, #F5CD6C 50%, #D6A84A 100%)',
+                  border: '1px solid #D6A84A',
+                  boxShadow: '0 0 15px rgba(214, 168, 74, 0.35)',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.boxShadow = '0 0 25px rgba(214, 168, 74, 0.65)';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.boxShadow = '0 0 15px rgba(214, 168, 74, 0.35)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
-                Contact Us
+                CONTACT US
               </Link>
             </div>
 

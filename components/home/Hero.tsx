@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import LinkNext from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Cpu, Compass, ShieldCheck, Zap, Activity } from 'lucide-react';
+import { ArrowRight, Compass, ShieldCheck, Settings, Activity } from 'lucide-react';
 
 // --- SUB-COMPONENT: ANIMATED COUNTER ---
 interface CounterProps {
@@ -54,7 +54,11 @@ function AnimatedCounter({ end, duration = 1600, prefix = '', suffix = '' }: Cou
   }, [hasStarted, end, duration]);
 
   return (
-    <span ref={ref} className="font-sans font-bold text-2xl md:text-[36px] text-white tracking-tight" style={{ lineHeight: 1 }}>
+    <span 
+      ref={ref} 
+      className="font-sans font-bold text-3xl md:text-[42px] text-white tracking-tight" 
+      style={{ lineHeight: 1, fontFamily: "'Inter', sans-serif" }}
+    >
       {prefix}
       {count.toLocaleString()}
       {suffix}
@@ -81,6 +85,7 @@ export default function Hero() {
     <section
       id="hero-section"
       className="relative w-full min-h-screen flex items-center justify-center bg-transparent pt-32 pb-16 overflow-hidden"
+      style={{ fontFamily: "'Inter', sans-serif" }}
       aria-labelledby="hero-heading"
     >
       {/* Splitscreen Container */}
@@ -96,51 +101,73 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="inline-flex items-center gap-3 mb-6 w-fit px-4 py-1.5 rounded-full"
             style={{
-              background: 'rgba(77, 169, 255, 0.04)',
-              border: '1px solid rgba(77, 169, 255, 0.12)',
+              background: 'rgba(77, 169, 255, 0.05)',
+              border: '1px solid rgba(77, 169, 255, 0.18)',
               boxShadow: '0 0 15px rgba(77, 169, 255, 0.02)',
             }}
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#4DA9FF] animate-pulse" />
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] font-sans text-[#4DA9FF]">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] font-sans text-[#4DA9FF]" style={{ fontFamily: "'Inter', sans-serif" }}>
               India's Pioneer Sintered Magnet Campus
             </span>
           </motion.div>
 
-          {/* Headline - Apple/NVIDIA/SpaceX Inspired scale */}
+          {/* Headline - Unified, single modern sans-serif font family. No mix of serif and italic styles */}
           <motion.h1
             id="hero-heading"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[2.6rem] sm:text-[3.8rem] md:text-[88px] font-bold text-white tracking-[-0.02em] mb-6"
+            className="text-[2.6rem] sm:text-[3.8rem] md:text-[80px] font-bold text-white tracking-[-0.02em] mb-6"
             style={{
               fontFamily: "'Inter', sans-serif",
-              lineHeight: '92%',
+              lineHeight: '94%',
             }}
           >
             Building India's Future of{' '}
-            <span className="gold-text italic block py-2">Advanced Permanent</span>
-            Magnet Manufacturing
+            <span className="gold-text block py-2" style={{ fontFamily: "'Inter', sans-serif", fontStyle: 'normal' }}>
+              Advanced Permanent Magnet Manufacturing
+            </span>
           </motion.h1>
 
-          {/* Description */}
+          {/* Subtext Paragraph - Highly legible, clear white sans-serif font */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="text-[20px] leading-[170%] max-w-[620px] text-[#BFC6CF] mb-8 font-sans"
+            className="text-[18px] md:text-[20px] leading-[170%] max-w-[620px] text-white/95 mb-8"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Magnova is establishing India's pioneer commercial-scale manufacturing campus for 
             sintered NdFeB permanent magnets, securing self-reliance in high-value strategic technologies.
           </motion.p>
 
-          {/* Interactive CTAs with Button Drift (Magnetic Force) */}
+          {/* Metrics Row - Presented clearly below subtext */}
+          <div className="grid grid-cols-4 gap-4 pt-6 pb-8 border-t border-white/10 mb-8">
+            <div>
+              <AnimatedCounter end={1200} suffix="+" />
+              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>TPA Capacity</p>
+            </div>
+            <div>
+              <AnimatedCounter end={25} suffix=" Acre" />
+              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>Campus Size</p>
+            </div>
+            <div>
+              <AnimatedCounter end={50} suffix="%" />
+              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>Capital Subsidy</p>
+            </div>
+            <div>
+              <AnimatedCounter end={2032} suffix="" />
+              <p className="text-[10px] text-white font-bold tracking-wider uppercase mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>IPO Roadmap</p>
+            </div>
+          </div>
+
+          {/* Calls-to-Action - Two premium buttons below metrics row with distinct treatments & better spacing */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mb-10"
+            className="flex flex-col sm:flex-row items-center gap-6 mb-8"
           >
             {/* Magnetic primary button wrapper */}
             <div
@@ -157,15 +184,17 @@ export default function Hero() {
                   id="hero-primary-cta"
                   className="btn-primary inline-flex items-center justify-center gap-3 w-full sm:w-auto px-9 py-4 rounded-sm group relative"
                   style={{
-                    fontSize: '18px',
-                    fontWeight: 500,
-                    boxShadow: '0 0 25px rgba(214,168,74,0.22)',
+                    fontSize: '15px',
+                    fontWeight: 700,
+                    letterSpacing: '1.5px',
+                    textTransform: 'uppercase',
+                    fontFamily: "'Inter', sans-serif",
+                    boxShadow: '0 0 25px rgba(214,168,74,0.25)',
                   }}
                 >
-                  <Zap size={15} className="text-[#02050B] group-hover:scale-110 transition-transform duration-300" />
-                  Partner With Us
+                  PARTNER WITH US
                   <ArrowRight
-                    size={15}
+                    size={16}
                     className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </LinkNext>
@@ -177,53 +206,37 @@ export default function Hero() {
               id="hero-secondary-cta"
               className="btn-outline inline-flex items-center justify-center gap-3 w-full sm:w-auto px-9 py-4 rounded-sm group"
               style={{
-                fontSize: '18px',
-                fontWeight: 500,
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                background: 'rgba(255, 255, 255, 0.015)',
+                fontSize: '15px',
+                fontWeight: 700,
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+                fontFamily: "'Inter', sans-serif",
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                background: 'rgba(255, 255, 255, 0.03)',
                 backdropFilter: 'blur(10px)',
                 color: '#FFFFFF',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.06)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)';
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.08)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.45)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)';
               }}
             >
-              <Cpu size={15} />
-              Explore Technology
+              <Settings size={16} className="animate-spin-slow" />
+              EXPLORE TECHNOLOGY
             </LinkNext>
           </motion.div>
 
-          {/* Four Key Metrics Aligned Cleanly */}
-          <div className="grid grid-cols-4 gap-4 pt-6 pb-8 border-t border-white/5">
-            <div>
-              <AnimatedCounter end={1200} suffix="+" />
-              <p className="text-[9px] text-[#5E6875] font-bold tracking-wider uppercase mt-1">TPA Capacity</p>
-            </div>
-            <div>
-              <AnimatedCounter end={25} suffix=" Acre" />
-              <p className="text-[9px] text-[#5E6875] font-bold tracking-wider uppercase mt-1">Campus size</p>
-            </div>
-            <div>
-              <AnimatedCounter end={50} suffix="%" />
-              <p className="text-[9px] text-[#5E6875] font-bold tracking-wider uppercase mt-1 font-sans">Capital Subsidy</p>
-            </div>
-            <div>
-              <AnimatedCounter end={2032} suffix="" />
-              <p className="text-[9px] text-[#5E6875] font-bold tracking-wider uppercase mt-1">IPO Roadmap</p>
-            </div>
-          </div>
-
-          {/* Small Trust Badges */}
+          {/* Small Trust Badges - Crucial fix: high contrast readable white label secondary text */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.95 }}
-            className="flex flex-wrap gap-2.5 text-[0.55rem] font-bold text-white/60 tracking-widest uppercase"
+            className="flex flex-wrap gap-3 text-[0.62rem] font-bold text-white tracking-widest uppercase"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             {[
               { icon: Compass, text: 'Government Approved' },
@@ -234,14 +247,15 @@ export default function Hero() {
               return (
                 <div
                   key={badge.text}
-                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-sm"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-sm"
                   style={{
-                    background: 'rgba(8, 17, 29, 0.4)',
-                    border: '1px solid rgba(214, 168, 74, 0.1)',
+                    background: 'rgba(8, 17, 29, 0.75)',
+                    border: '1px solid rgba(214, 168, 74, 0.35)',
+                    boxShadow: '0 0 10px rgba(214,168,74,0.05)',
                   }}
                 >
-                  <Icon size={9} style={{ color: '#D6A84A' }} />
-                  <span>{badge.text}</span>
+                  <Icon size={10} style={{ color: '#D6A84A' }} />
+                  <span className="text-white font-semibold">{badge.text}</span>
                 </div>
               );
             })}
@@ -256,24 +270,25 @@ export default function Hero() {
           {/* Top-Right Floating Tech Card */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 0.85, x: 0 }}
+            animate={{ opacity: 0.95, x: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="self-end rounded-sm p-4 text-[0.68rem] font-mono tracking-wider text-left border"
             style={{
-              borderColor: 'rgba(214, 168, 74, 0.15)',
-              background: 'rgba(8, 17, 29, 0.65)',
-              backdropFilter: 'blur(12px)',
+              borderColor: 'rgba(214, 168, 74, 0.25)',
+              background: 'rgba(8, 17, 29, 0.75)',
+              backdropFilter: 'blur(16px)',
               width: '240px',
-              boxShadow: '0 0 20px rgba(214, 168, 74, 0.03)',
+              boxShadow: '0 0 20px rgba(214, 168, 74, 0.05)',
             }}
           >
-            <div className="flex justify-between items-center mb-2 border-b border-[#D6A84A]/10 pb-1.5">
-              <span className="text-[#D6A84A] font-bold">MATERIAL: REPM-N52</span>
+            <div className="flex justify-between items-center mb-2 border-b border-[#D6A84A]/25 pb-1.5">
+              <span className="text-[#D6A84A] font-bold">MATERIAL SPECIFICATIONS</span>
               <span className="text-white/40">SEC // 01</span>
             </div>
-            <p className="text-white/70 mb-1">REMANENCE (Br): <span className="text-white font-bold">1.48 T</span></p>
-            <p className="text-white/70 mb-1">COERCIVITY (Hcb): <span className="text-white font-bold">&gt;820 kA/m</span></p>
-            <p className="text-white/70 font-sans">MAX ENERGY (BHmax): <span className="text-white font-bold">410 kJ/m³</span></p>
+            <p className="text-white mb-1">Material: <span className="text-white font-bold">REPM-N52</span></p>
+            <p className="text-white mb-1">Remanence (Br): <span className="text-white font-bold">1.48 T</span></p>
+            <p className="text-white mb-1">Coercivity (Hcb): <span className="text-white font-bold">&gt;820 kA/m</span></p>
+            <p className="text-white font-sans">Max Energy (BHmax): <span className="text-white font-bold">410 kJ/m³</span></p>
           </motion.div>
 
           {/* Spacer to let the 3D magnet shine */}
@@ -282,24 +297,24 @@ export default function Hero() {
           {/* Bottom-Right Floating Tech Card */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 0.85, x: 0 }}
+            animate={{ opacity: 0.95, x: 0 }}
             transition={{ duration: 1, delay: 0.85 }}
             className="self-start rounded-sm p-4 text-[0.68rem] font-mono tracking-wider text-left border"
             style={{
-              borderColor: 'rgba(77, 169, 255, 0.15)',
-              background: 'rgba(8, 17, 29, 0.65)',
-              backdropFilter: 'blur(12px)',
+              borderColor: 'rgba(77, 169, 255, 0.25)',
+              background: 'rgba(8, 17, 29, 0.75)',
+              backdropFilter: 'blur(16px)',
               width: '240px',
-              boxShadow: '0 0 20px rgba(77, 169, 255, 0.03)',
+              boxShadow: '0 0 20px rgba(77, 169, 255, 0.05)',
             }}
           >
-            <div className="flex justify-between items-center mb-2 border-b border-[#4DA9FF]/10 pb-1.5">
+            <div className="flex justify-between items-center mb-2 border-b border-[#4DA9FF]/25 pb-1.5">
               <span className="text-[#4DA9FF] font-bold">ENVIRONMENT CONTROL</span>
               <span className="text-white/40">SEC // 02</span>
             </div>
-            <p className="text-white/70 mb-1">ATMOSPHERE: <span className="text-white font-bold">ARGON [99.99%]</span></p>
-            <p className="text-white/70 mb-1">PRESSURE: <span className="text-white font-bold">1.02 bar</span></p>
-            <p className="text-white/70 font-sans">CELL TEMP: <span className="text-white font-bold">24.5 °C</span></p>
+            <p className="text-white mb-1">Environment: <span className="text-white font-bold">Argon [99.99%]</span></p>
+            <p className="text-white mb-1">Pressure: <span className="text-white font-bold">1.02 bar</span></p>
+            <p className="text-white font-sans">Cell Temp: <span className="text-white font-bold">24.5 °C</span></p>
           </motion.div>
 
         </div>
