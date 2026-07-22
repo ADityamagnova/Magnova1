@@ -9,16 +9,16 @@ export default function HomeCTA() {
     <section
       id="home-cta"
       className="section-sm relative overflow-hidden flex flex-col items-center justify-center text-center w-full"
-      style={{ background: '#0a1929' }}
+      style={{ background: '#02050B' }}
     >
       {/* Decorative corner lines */}
       <div className="absolute top-0 left-0 w-48 h-48 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-8 left-8 w-16 h-px" style={{ background: 'rgba(201,150,58,0.3)' }} />
-        <div className="absolute top-8 left-8 w-px h-16" style={{ background: 'rgba(201,150,58,0.3)' }} />
+        <div className="absolute top-8 left-8 w-16 h-px" style={{ background: 'rgba(214,168,74,0.3)' }} />
+        <div className="absolute top-8 left-8 w-px h-16" style={{ background: 'rgba(214,168,74,0.3)' }} />
       </div>
       <div className="absolute bottom-0 right-0 w-48 h-48 pointer-events-none" aria-hidden="true">
-        <div className="absolute bottom-8 right-8 w-16 h-px" style={{ background: 'rgba(201,150,58,0.3)' }} />
-        <div className="absolute bottom-8 right-8 w-px h-16" style={{ background: 'rgba(201,150,58,0.3)' }} />
+        <div className="absolute bottom-8 right-8 w-16 h-px" style={{ background: 'rgba(214,168,74,0.3)' }} />
+        <div className="absolute bottom-8 right-8 w-px h-16" style={{ background: 'rgba(214,168,74,0.3)' }} />
       </div>
 
       {/* Center radial glow */}
@@ -27,7 +27,7 @@ export default function HomeCTA() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,150,58,0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(77,169,255,0.05) 0%, transparent 70%)',
         }}
       />
       <div className="max-w-4xl w-full mx-auto px-6 md:px-12 lg:px-16 relative z-10">
@@ -35,9 +35,9 @@ export default function HomeCTA() {
           <div
             className="premium-card rounded-sm text-center transition-all duration-300 hover:border-gold-light"
             style={{
-              background: 'linear-gradient(135deg, rgba(14,25,41,0.7) 0%, rgba(6,15,28,0.9) 100%)',
-              border: '1px solid rgba(201,150,58,0.18)',
-              boxShadow: '0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,150,58,0.06)',
+              background: 'linear-gradient(135deg, rgba(8,17,29,0.75) 0%, rgba(12,25,48,0.95) 100%)',
+              border: '1px solid rgba(77,169,255,0.18)',
+              boxShadow: '0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(77,169,255,0.06)',
               padding: '4.5rem 2.5rem',
             }}
           >

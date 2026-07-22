@@ -14,7 +14,7 @@ export default function VisionSection() {
     <section
       id="vision"
       className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: '#060f1c' }}
+      style={{ background: '#02050B' }}
     >
       {/* Central radial */}
       <div
@@ -22,7 +22,7 @@ export default function VisionSection() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(14,32,56,0.8) 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(12,25,48,0.7) 0%, transparent 70%)',
         }}
       />
 

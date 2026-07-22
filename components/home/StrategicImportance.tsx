@@ -8,7 +8,7 @@ export default function StrategicImportance() {
     <section
       id="strategic-importance"
       className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: 'linear-gradient(180deg, #060f1c 0%, #0a1929 50%, #060f1c 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #02050B 0%, #08111D 50%, #02050B 100%)' }}
     >
       {/* Subtle radial glow */}
       <div
@@ -16,7 +16,7 @@ export default function StrategicImportance() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,150,58,0.04) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(77,169,255,0.035) 0%, transparent 70%)',
         }}
       />
 
@@ -82,8 +82,8 @@ export default function StrategicImportance() {
                 whileHover={{ y: -6, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 style={{
-                  border: '1px solid rgba(201,150,58,0.12)',
-                  background: 'linear-gradient(135deg, rgba(14,25,41,0.7) 0%, rgba(6,15,28,0.9) 100%)',
+                  border: '1px solid rgba(77,169,255,0.15)',
+                  background: 'linear-gradient(135deg, rgba(8,17,29,0.75) 0%, rgba(12,25,48,0.9) 100%)',
                 }}
               >
                 <div>
@@ -93,12 +93,12 @@ export default function StrategicImportance() {
                       style={{
                         width: 36,
                         height: 2,
-                        background: 'linear-gradient(90deg, #C9963A, #E8B84B)',
+                        background: 'linear-gradient(90deg, #D6A84A, #F5CD6C)',
                       }}
                     />
                     <span 
-                      className="font-display font-bold italic text-sm"
-                      style={{ color: 'rgba(201,150,58,0.3)', letterSpacing: '0.1em' }}
+                      className="font-sans font-bold text-xs"
+                      style={{ color: '#4DA9FF', letterSpacing: '0.1em' }}
                     >
                       {item.num}
                     </span>

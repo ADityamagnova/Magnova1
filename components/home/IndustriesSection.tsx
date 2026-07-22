@@ -55,7 +55,7 @@ export default function IndustriesSection() {
     <section
       id="industries"
       className="section relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: '#0a1929' }}
+      style={{ background: '#08111D' }}
     >
       {/* Corner accent */}
       <div
@@ -63,7 +63,7 @@ export default function IndustriesSection() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse at top right, rgba(201,150,58,0.05) 0%, transparent 65%)',
+            'radial-gradient(ellipse at top right, rgba(77,169,255,0.035) 0%, transparent 65%)',
         }}
       />
 
@@ -96,19 +96,19 @@ export default function IndustriesSection() {
                   whileHover={{ y: -6, scale: 1.015 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   style={{
-                    border: '1px solid rgba(255,255,255,0.06)',
-                    background: 'linear-gradient(135deg, rgba(11,26,46,0.7) 0%, rgba(6,15,28,0.95) 100%)',
+                    border: '1px solid rgba(77,169,255,0.12)',
+                    background: 'linear-gradient(135deg, rgba(8,17,29,0.7) 0%, rgba(12,25,48,0.95) 100%)',
                   }}
                 >
                   {/* Icon */}
                   <div
-                    className="w-12 h-12 rounded-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9963A]"
+                    className="w-12 h-12 rounded-sm flex items-center justify-center transition-all duration-300 group-hover:bg-[#D6A84A]"
                     style={{
-                      background:   'rgba(201,150,58,0.08)',
-                      border:       '1px solid rgba(201,150,58,0.18)',
+                      background:   'rgba(214,168,74,0.08)',
+                      border:       '1px solid rgba(214,168,74,0.18)',
                     }}
                   >
-                    <Icon size={20} className="transition-colors duration-300 group-hover:text-[#060f1c]" style={{ color: '#C9963A' }} aria-hidden="true" />
+                    <Icon size={20} className="transition-colors duration-300 group-hover:text-[#02050B]" style={{ color: '#D6A84A' }} aria-hidden="true" />
                   </div>
 
                   <div className="flex flex-col gap-2">
@@ -119,7 +119,7 @@ export default function IndustriesSection() {
                       {ind.label}
                     </h3>
 
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(191,198,207,0.7)' }}>
                       {ind.description}
                     </p>
                   </div>
@@ -131,7 +131,7 @@ export default function IndustriesSection() {
                   >
                     <div
                       className="h-px w-0 group-hover:w-full transition-all duration-500"
-                      style={{ background: 'linear-gradient(90deg, #C9963A, transparent)' }}
+                      style={{ background: 'linear-gradient(90deg, #D6A84A, transparent)' }}
                     />
                   </div>
                 </motion.div>
