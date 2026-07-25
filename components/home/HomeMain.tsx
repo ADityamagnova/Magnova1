@@ -102,48 +102,32 @@ export default function HomeMain() {
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // --- 1. PHOTOREALISTIC NEODYMIUM DIPOLE MAGNET ---
+    // --- 1. PHOTOREALISTIC GOLDEN RECTANGULAR BLOCK MAGNET ---
     const magnetGroup = new THREE.Group();
     scene.add(magnetGroup);
 
-    // Rounded cylinder geometry or box representation representing a highly-polished bar magnet
-    // We will build a polished chrome block with a gold-plated North Pole and silver-plated South Pole
-    const segmentCount = 32;
-    const radius = 0.75;
-    const halfHeight = 1.2;
+    // 3D Cuboid Block Geometry matching the target image
+    const boxWidth = 1.3;
+    const boxHeight = 2.2;
+    const boxDepth = 1.0;
+    const halfHeight = boxHeight / 2;
 
-    // Gold Top Half (North Pole)
-    const nGeom = new THREE.CylinderGeometry(radius, radius, halfHeight, segmentCount);
-    const nMat = new THREE.MeshStandardMaterial({
-      color: 0xD6A84A, // Premium Gold
-      metalness: 0.95,
-      roughness: 0.08,
-      bumpScale: 0.05
+    const boxGeom = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+    const boxMat = new THREE.MeshStandardMaterial({
+      color: 0xE5B842, // Rich Amber Gold
+      metalness: 0.85,
+      roughness: 0.15,
+      transparent: true,
+      opacity: 0.85,
     });
-    const northMesh = new THREE.Mesh(nGeom, nMat);
-    northMesh.position.y = halfHeight / 2;
-    magnetGroup.add(northMesh);
+    const magnetMesh = new THREE.Mesh(boxGeom, boxMat);
+    magnetGroup.add(magnetMesh);
 
-    // Chrome Bottom Half (South Pole)
-    const sGeom = new THREE.CylinderGeometry(radius, radius, halfHeight, segmentCount);
-    const sMat = new THREE.MeshStandardMaterial({
-      color: 0xBFC6CF, // Polished Silver/Chrome
-      metalness: 0.95,
-      roughness: 0.08,
-    });
-    const southMesh = new THREE.Mesh(sGeom, sMat);
-    southMesh.position.y = -halfHeight / 2;
-    magnetGroup.add(southMesh);
-
-    // Center divider groove
-    const dividerGeom = new THREE.CylinderGeometry(radius + 0.01, radius + 0.01, 0.04, segmentCount);
-    const dividerMat = new THREE.MeshStandardMaterial({
-      color: 0x02050B,
-      metalness: 0.9,
-      roughness: 0.5,
-    });
-    const dividerMesh = new THREE.Mesh(dividerGeom, dividerMat);
-    magnetGroup.add(dividerMesh);
+    // Wireframe edges outline for technical CAD look
+    const edgesGeom = new THREE.EdgesGeometry(boxGeom);
+    const edgesMat = new THREE.LineBasicMaterial({ color: 0xFFF0B3, opacity: 0.6, transparent: true });
+    const wireframe = new THREE.LineSegments(edgesGeom, edgesMat);
+    magnetGroup.add(wireframe);
 
     // --- 2. RARE EARTH ATOM CRYSTAL LATTICE ---
     const latticeGroup = new THREE.Group();
@@ -426,12 +410,10 @@ export default function HomeMain() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleNormalizedMouseMove);
       renderer.dispose();
-      nGeom.dispose();
-      nMat.dispose();
-      sGeom.dispose();
-      sMat.dispose();
-      dividerGeom.dispose();
-      dividerMat.dispose();
+      boxGeom.dispose();
+      boxMat.dispose();
+      edgesGeom.dispose();
+      edgesMat.dispose();
       atomGeom.dispose();
       atomGoldMat.dispose();
       atomSilverMat.dispose();

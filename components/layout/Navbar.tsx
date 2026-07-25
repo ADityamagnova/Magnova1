@@ -66,65 +66,40 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-10" aria-label="Primary navigation">
+            <nav className="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
               {navLinks.map((link) => {
                 const active = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="relative group"
+                    className="relative py-1 text-sm font-medium transition-colors"
                     style={{
-                      fontSize:      '14px',
-                      fontWeight:    500,
-                      letterSpacing: '2px',
-                      textTransform: 'uppercase',
-                      color: active ? '#D6A84A' : 'rgba(255,255,255,0.65)',
-                      transition: 'color 0.3s ease',
+                      color: active ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
                     }}
                     aria-current={active ? 'page' : undefined}
                   >
                     {link.label}
-                    <span
-                      className="absolute -bottom-1 left-0 h-px transition-all duration-300"
-                      style={{
-                        background: 'linear-gradient(90deg, #D6A84A, #F5CD6C)',
-                        width: active ? '100%' : '0%',
-                      }}
-                    />
-                    <span
-                      className="absolute -bottom-1 left-0 h-px opacity-0 group-hover:opacity-100 group-hover:w-full transition-all duration-300"
-                      style={{
-                        background: 'linear-gradient(90deg, #D6A84A, #F5CD6C)',
-                        width: '0%',
-                      }}
-                    />
+                    {active && (
+                      <motion.span
+                        layoutId="activeNavIndicator"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E5B842] rounded-full"
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
+                    )}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* CTA */}
+            {/* CTA - Pill Button matching image */}
             <div className="hidden lg:block">
               <Link
                 href="/contact"
                 id="nav-contact-cta"
-                className="inline-flex items-center px-8 py-3.5 rounded-sm text-[0.72rem] font-bold tracking-widest text-[#02050B] transition-all duration-300 uppercase"
-                style={{
-                  background: 'linear-gradient(135deg, #D6A84A 0%, #F5CD6C 50%, #D6A84A 100%)',
-                  border: '1px solid #D6A84A',
-                  boxShadow: '0 0 15px rgba(214, 168, 74, 0.35)',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = '0 0 25px rgba(214, 168, 74, 0.65)';
-                  e.currentTarget.style.transform = 'translateY(-1px)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = '0 0 15px rgba(214, 168, 74, 0.35)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
+                className="inline-flex items-center px-5 py-2 rounded-full text-xs font-semibold text-white bg-[#0F141C]/90 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                CONTACT US
+                Contact Us
               </Link>
             </div>
 
