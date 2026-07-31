@@ -79,9 +79,9 @@ export default function VisionSection() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         
-        {/* Section Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
+        {/* Integrated 2-Column Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
+          <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/25 text-[0.7rem] font-mono tracking-widest text-[#E5B842] uppercase mb-4">
               <TrendingUp size={12} />
               <span>STRATEGIC GROWTH ROADMAP</span>
@@ -91,9 +91,11 @@ export default function VisionSection() {
               <span className="gold-text">Industrial & Sovereign Impact</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-white/70 max-w-md">
-            Grounded in precision metallurgy, operational scale, and institutional backing to build a multi-billion dollar rare-earth magnet enterprise.
-          </p>
+          <div className="lg:col-span-5">
+            <p className="text-sm md:text-base text-white/80 leading-relaxed border-l-2 border-[#E5B842] pl-4">
+              Grounded in precision metallurgy, operational scale, and institutional backing to build a multi-billion dollar rare-earth magnet enterprise.
+            </p>
+          </div>
         </div>
 
         {/* --- TIMELINE YEAR BUTTONS --- */}

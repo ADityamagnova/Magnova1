@@ -79,9 +79,9 @@ export default function TechnologyTeaser() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         
-        {/* Header Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
+        {/* Integrated 2-Column Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
+          <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/25 text-[0.7rem] font-mono tracking-widest text-[#E5B842] uppercase mb-4">
               <Cpu size={12} />
               <span>ADVANCED SINTERING MANUFACTURING PIPELINE</span>
@@ -91,9 +91,11 @@ export default function TechnologyTeaser() {
               <span className="gold-text">Microstructural & Atomic Scale</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-white/70 max-w-md">
-            From raw elemental rare-earth metals to high-coercivity permanent magnets, explore Magnova's automated 6-stage sintering process.
-          </p>
+          <div className="lg:col-span-5">
+            <p className="text-sm md:text-base text-white/80 leading-relaxed border-l-2 border-[#E5B842] pl-4">
+              From raw elemental rare-earth metals to high-coercivity permanent magnets, explore Magnova's automated 6-stage sintering process.
+            </p>
+          </div>
         </div>
 
         {/* --- STEP SELECTOR BAR --- */}

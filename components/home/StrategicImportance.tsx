@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Factory, Sun, Landmark, ArrowUpRight, Zap, Globe2 } from 'lucide-react';
+import { ShieldCheck, Factory, Sun, Landmark, ArrowUpRight, Zap, Globe2, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function StrategicImportance() {
@@ -15,9 +15,9 @@ export default function StrategicImportance() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         
-        {/* Header Block */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
+        {/* Integrated 2-Column Header Block (Fills Right Side Naturally) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
+          <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4DA9FF]/10 border border-[#4DA9FF]/25 text-[0.7rem] font-mono tracking-widest text-[#4DA9FF] uppercase mb-4">
               <Globe2 size={12} />
               <span>COMMERCIAL FOOTPRINT & STRATEGIC IMPACT</span>
@@ -27,19 +27,21 @@ export default function StrategicImportance() {
               <span className="gold-text">Sintered Rare-Earth Magnet Campus</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-white/70 max-w-md">
-            Securing national self-reliance and global supply chain resilience through state-of-the-art permanent magnet sintering technology.
-          </p>
+          <div className="lg:col-span-5">
+            <p className="text-sm md:text-base text-white/80 leading-relaxed border-l-2 border-[#E5B842] pl-4">
+              Securing national self-reliance and global supply chain resilience through state-of-the-art commercial permanent magnet sintering capabilities.
+            </p>
+          </div>
         </div>
 
-        {/* --- NEO-INSPIRED BENTO GRID LAYOUT --- */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        {/* --- NEO-INSPIRED BALANCED BENTO GRID (6 Cols / 6 Cols) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
-          {/* BENTO CARD 1: 25-Acre Manufacturing Campus (7 cols on desktop) */}
+          {/* BENTO CARD 1: 25-Acre Manufacturing Campus (6 cols) */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ duration: 0.3 }}
-            className="md:col-span-7 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[380px] shadow-2xl group"
+            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
           >
             {/* Ambient Background Graphic */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#E5B842]/10 via-[#4DA9FF]/5 to-transparent pointer-events-none rounded-full blur-3xl" />
@@ -83,11 +85,11 @@ export default function StrategicImportance() {
             </div>
           </motion.div>
 
-          {/* BENTO CARD 2: Sovereign Supply Chain Independence (5 cols on desktop) */}
+          {/* BENTO CARD 2: Sovereign Supply Chain Independence (6 cols) */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ duration: 0.3 }}
-            className="md:col-span-5 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[380px] shadow-2xl group"
+            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -101,14 +103,25 @@ export default function StrategicImportance() {
                 <div className="p-2.5 rounded-xl bg-[#4DA9FF]/10 border border-[#4DA9FF]/20 text-[#4DA9FF]">
                   <ShieldCheck size={22} />
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-[#4DA9FF] transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#4DA9FF] transition-colors">
                   Sovereign Supply Independence
                 </h3>
               </div>
 
-              <p className="text-sm text-white/80 leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
                 Eliminating 100% import dependency for critical rare-earth permanent magnets (REPM) across EV motors, defense guidance systems, aerospace actuators, and offshore wind turbines.
               </p>
+
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2.5 text-xs text-white/90">
+                  <CheckCircle2 size={16} className="text-[#E5B842] shrink-0" />
+                  <span>Domestic supply chain security for EV & Defense OEMs</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs text-white/90">
+                  <CheckCircle2 size={16} className="text-[#E5B842] shrink-0" />
+                  <span>High-coercivity Dy/Tb grain boundary diffusion capability</span>
+                </div>
+              </div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#050811] border border-white/10 font-mono text-xs text-white/80">
@@ -116,11 +129,11 @@ export default function StrategicImportance() {
             </div>
           </motion.div>
 
-          {/* BENTO CARD 3: 100% Solar-Integrated & Sustainable Sintering (5 cols) */}
+          {/* BENTO CARD 3: 100% Solar-Integrated & Sustainable Sintering (6 cols) */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ duration: 0.3 }}
-            className="md:col-span-5 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[340px] shadow-2xl group"
+            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -134,27 +147,33 @@ export default function StrategicImportance() {
                 <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                   <Sun size={22} />
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors">
                   Solar Powered & Zero Waste Operations
                 </h3>
               </div>
 
-              <p className="text-sm text-white/80 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
                 Campus equipped with rooftop solar energy generation, closed-loop Argon gas atmosphere recycling, and Zero Liquid Discharge (ZLD) effluent management.
               </p>
             </div>
 
-            <div className="flex items-center justify-between text-xs font-mono text-emerald-400">
-              <span>100% Solar-Integrated</span>
-              <span>Closed-Loop Argon</span>
+            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 font-mono text-xs text-emerald-400">
+              <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
+                <span className="block text-[10px] text-white/40 uppercase mb-0.5">Energy Mix</span>
+                <span className="font-bold">100% Solar-Integrated</span>
+              </div>
+              <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
+                <span className="block text-[10px] text-white/40 uppercase mb-0.5">Atmosphere</span>
+                <span className="font-bold">Closed-Loop Argon</span>
+              </div>
             </div>
           </motion.div>
 
-          {/* BENTO CARD 4: Government Policy & 50% Capital Subsidy (7 cols) */}
+          {/* BENTO CARD 4: Government Policy & 50% Capital Subsidy (6 cols) */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ duration: 0.3 }}
-            className="md:col-span-7 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[340px] shadow-2xl group"
+            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -169,7 +188,7 @@ export default function StrategicImportance() {
                   <Landmark size={22} />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#E5B842] transition-colors">
-                  50% Capital Subsidy & Institutional Alignment
+                  50% Capital Subsidy & Policy Alignment
                 </h3>
               </div>
 
@@ -178,10 +197,10 @@ export default function StrategicImportance() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
               <div className="flex items-center gap-2 text-xs font-mono text-white/70">
                 <Zap size={14} className="text-[#E5B842]" />
-                <span>Targeting Commercial Dispatch & IPO Roadmap</span>
+                <span>Commercial Dispatch & IPO Roadmap Active</span>
               </div>
 
               <Link

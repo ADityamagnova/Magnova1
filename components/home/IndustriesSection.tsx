@@ -89,9 +89,9 @@ export default function IndustriesSection() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         
-        {/* Section Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
+        {/* Integrated 2-Column Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
+          <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4DA9FF]/10 border border-[#4DA9FF]/25 text-[0.7rem] font-mono tracking-widest text-[#4DA9FF] uppercase mb-4">
               <Zap size={12} />
               <span>KEY INDUSTRIAL SECTORS</span>
@@ -101,9 +101,11 @@ export default function IndustriesSection() {
               <span className="gold-text">Global Advanced Industries</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-white/70 max-w-md">
-            Custom magnetic properties tailored to withstand extreme thermal, mechanical, and demagnetization stress across high-growth strategic markets.
-          </p>
+          <div className="lg:col-span-5">
+            <p className="text-sm md:text-base text-white/80 leading-relaxed border-l-2 border-[#4DA9FF] pl-4">
+              Custom magnetic properties tailored to withstand extreme thermal, mechanical, and demagnetization stress across high-growth strategic markets.
+            </p>
+          </div>
         </div>
 
         {/* --- 6-CARD SECTOR GRID --- */}
