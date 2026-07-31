@@ -1,122 +1,201 @@
 'use client';
 
-import { FadeIn } from '@/components/ui/Animate';
 import { motion } from 'framer-motion';
+import { ShieldCheck, Factory, Sun, Landmark, ArrowUpRight, Zap, Globe2 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function StrategicImportance() {
   return (
     <section
       id="strategic-importance"
-      className="section relative overflow-hidden flex flex-col items-center w-full bg-transparent"
-      style={{ background: 'transparent' }}
+      className="relative w-full py-24 bg-[#02050B] overflow-hidden"
     >
-      {/* Subtle radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(77,169,255,0.035) 0%, transparent 70%)',
-        }}
-      />
+      {/* Background ambient radial lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-radial from-[#4DA9FF]/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
-        <div className="max-w-4xl mx-auto text-center">
-
-          <FadeIn>
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="gold-line w-10" />
-              <span className="eyebrow">Strategic Foundation</span>
-              <div className="gold-line w-10" />
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+        
+        {/* Header Block */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4DA9FF]/10 border border-[#4DA9FF]/25 text-[0.7rem] font-mono tracking-widest text-[#4DA9FF] uppercase mb-4">
+              <Globe2 size={12} />
+              <span>COMMERCIAL FOOTPRINT & STRATEGIC IMPACT</span>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.1}>
-            <h2
-              className="font-display font-bold text-white mb-6"
-              style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15 }}
-            >
-              Enabling Critical{' '}
-              <span className="gold-text italic">Industrial Supply Chains</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+              India's Pioneer Commercial-Scale <br className="hidden sm:block" />
+              <span className="gold-text">Sintered Rare-Earth Magnet Campus</span>
             </h2>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <p
-              className="text-lg leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.5)' }}
-            >
-              Rare-earth permanent magnets are foundational to modern technologies. Magnova aims
-              to contribute to a resilient domestic manufacturing ecosystem supporting industries
-              that power the future.
-            </p>
-          </FadeIn>
+          </div>
+          <p className="text-sm md:text-base text-white/70 max-w-md">
+            Securing national self-reliance and global supply chain resilience through state-of-the-art permanent magnet sintering technology.
+          </p>
         </div>
 
-        {/* Three-column callouts */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          {[
-            {
-              id: 'pillar-supply',
-              num: '01',
-              title: 'Supply Chain Resilience',
-              text:  'Strengthening domestic rare-earth magnet capabilities to reduce dependence on global supply constraints.',
-            },
-            {
-              id: 'pillar-tech',
-              num: '02',
-              title: 'Technological Self-Reliance',
-              text:  'Advanced manufacturing designed to meet the precision demands of next-generation industrial applications.',
-            },
-            {
-              id: 'pillar-impact',
-              num: '03',
-              title: 'Strategic Industrial Impact',
-              text:  'Aligning manufacturing capacity with national priorities and the long-term needs of high-growth sectors.',
-            },
-          ].map((item, i) => (
-            <FadeIn key={item.id} delay={0.15 + i * 0.1}>
-              <motion.div
-                id={item.id}
-                className="premium-card p-8 rounded-sm h-full flex flex-col justify-between"
-                whileHover={{ y: -6, scale: 1.015 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                style={{
-                  border: '1px solid rgba(77,169,255,0.15)',
-                  background: 'linear-gradient(135deg, rgba(8,17,29,0.75) 0%, rgba(12,25,48,0.9) 100%)',
-                }}
-              >
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                    {/* Gold accent top-bar */}
-                    <div
-                      style={{
-                        width: 36,
-                        height: 2,
-                        background: 'linear-gradient(90deg, #D6A84A, #F5CD6C)',
-                      }}
-                    />
-                    <span 
-                      className="font-sans font-bold text-xs"
-                      style={{ color: '#4DA9FF', letterSpacing: '0.1em' }}
-                    >
-                      {item.num}
-                    </span>
-                  </div>
-                  <h3
-                    className="font-display font-semibold text-white mb-3"
-                    style={{ fontSize: '1.1rem' }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                    {item.text}
-                  </p>
+        {/* --- NEO-INSPIRED BENTO GRID LAYOUT --- */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          {/* BENTO CARD 1: 25-Acre Manufacturing Campus (7 cols on desktop) */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="md:col-span-7 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[380px] shadow-2xl group"
+          >
+            {/* Ambient Background Graphic */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#E5B842]/10 via-[#4DA9FF]/5 to-transparent pointer-events-none rounded-full blur-3xl" />
+
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="px-3 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-xs font-mono text-[#E5B842] font-bold">
+                  GUJARAT, INDIA
+                </span>
+                <span className="text-xs font-mono text-white/40">CAMPUS // 01</span>
+              </div>
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-[#E5B842]/10 border border-[#E5B842]/20 text-[#E5B842]">
+                  <Factory size={22} />
                 </div>
-              </motion.div>
-            </FadeIn>
-          ))}
+                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#E5B842] transition-colors">
+                  25-Acre Commercial Sintering Campus
+                </h3>
+              </div>
+
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                Magnova's mega-facility is purpose-built to scale from <span className="text-white font-bold">1,200 TPA initial capacity to 3,000 TPA</span> of sintered NdFeB permanent magnets, equipped with automated vacuum induction furnaces, jet mills, and multi-axis magnetizers.
+              </p>
+            </div>
+
+            {/* Bottom Metrics Bar inside Card */}
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 font-mono">
+              <div>
+                <p className="text-[10px] text-white/40 uppercase">Initial Capacity</p>
+                <p className="text-lg font-bold text-white">1,200 TPA</p>
+              </div>
+              <div>
+                <p className="text-[10px] text-white/40 uppercase">Expansion Target</p>
+                <p className="text-lg font-bold text-[#E5B842]">3,000 TPA</p>
+              </div>
+              <div>
+                <p className="text-[10px] text-white/40 uppercase">Land Parcel</p>
+                <p className="text-lg font-bold text-[#4DA9FF]">25 Acres</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* BENTO CARD 2: Sovereign Supply Chain Independence (5 cols on desktop) */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="md:col-span-5 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[380px] shadow-2xl group"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="px-3 py-1 rounded-full bg-[#4DA9FF]/10 border border-[#4DA9FF]/30 text-xs font-mono text-[#4DA9FF] font-bold">
+                  NATIONAL SECURITY
+                </span>
+                <span className="text-xs font-mono text-white/40">SUPPLY // 02</span>
+              </div>
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-[#4DA9FF]/10 border border-[#4DA9FF]/20 text-[#4DA9FF]">
+                  <ShieldCheck size={22} />
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-[#4DA9FF] transition-colors">
+                  Sovereign Supply Independence
+                </h3>
+              </div>
+
+              <p className="text-sm text-white/80 leading-relaxed mb-6">
+                Eliminating 100% import dependency for critical rare-earth permanent magnets (REPM) across EV motors, defense guidance systems, aerospace actuators, and offshore wind turbines.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-[#050811] border border-white/10 font-mono text-xs text-white/80">
+              <span className="text-[#E5B842] font-bold">Strategic Priority:</span> Sovereign manufacturing capability for high-coercivity NdFeB grades.
+            </div>
+          </motion.div>
+
+          {/* BENTO CARD 3: 100% Solar-Integrated & Sustainable Sintering (5 cols) */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="md:col-span-5 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[340px] shadow-2xl group"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 font-bold">
+                  GREEN MANUFACTURING
+                </span>
+                <span className="text-xs font-mono text-white/40">ESG // 03</span>
+              </div>
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                  <Sun size={22} />
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  Solar Powered & Zero Waste Operations
+                </h3>
+              </div>
+
+              <p className="text-sm text-white/80 leading-relaxed mb-4">
+                Campus equipped with rooftop solar energy generation, closed-loop Argon gas atmosphere recycling, and Zero Liquid Discharge (ZLD) effluent management.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-between text-xs font-mono text-emerald-400">
+              <span>100% Solar-Integrated</span>
+              <span>Closed-Loop Argon</span>
+            </div>
+          </motion.div>
+
+          {/* BENTO CARD 4: Government Policy & 50% Capital Subsidy (7 cols) */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="md:col-span-7 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md min-h-[340px] shadow-2xl group"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <span className="px-3 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-xs font-mono text-[#E5B842] font-bold">
+                  POLICY BACKING
+                </span>
+                <span className="text-xs font-mono text-white/40">INCENTIVES // 04</span>
+              </div>
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-[#E5B842]/10 border border-[#E5B842]/20 text-[#E5B842]">
+                  <Landmark size={22} />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#E5B842] transition-colors">
+                  50% Capital Subsidy & Institutional Alignment
+                </h3>
+              </div>
+
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                Aligned with the Ministry of Heavy Industries REPM manufacturing mandate, securing up to <span className="text-white font-bold">50% capital subsidy support</span> for critical rare-earth processing and sintering infrastructure.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-white/10">
+              <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+                <Zap size={14} className="text-[#E5B842]" />
+                <span>Targeting Commercial Dispatch & IPO Roadmap</span>
+              </div>
+
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#E5B842] hover:underline"
+              >
+                Read Strategic Whitepaper
+                <ArrowUpRight size={14} />
+              </Link>
+            </div>
+          </motion.div>
+
         </div>
+
       </div>
     </section>
   );

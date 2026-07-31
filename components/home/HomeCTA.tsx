@@ -1,89 +1,80 @@
 'use client';
 
 import Link from 'next/link';
-import { FadeIn } from '@/components/ui/Animate';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, FileText, Zap, ShieldCheck } from 'lucide-react';
 
 export default function HomeCTA() {
   return (
     <section
       id="home-cta"
-      className="section-sm relative overflow-hidden flex flex-col items-center justify-center text-center w-full bg-transparent"
-      style={{ background: 'transparent' }}
+      className="relative w-full py-24 bg-[#050811] border-t border-white/10 overflow-hidden"
     >
-      {/* Decorative corner lines */}
-      <div className="absolute top-0 left-0 w-48 h-48 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-8 left-8 w-16 h-px" style={{ background: 'rgba(214,168,74,0.3)' }} />
-        <div className="absolute top-8 left-8 w-px h-16" style={{ background: 'rgba(214,168,74,0.3)' }} />
-      </div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 pointer-events-none" aria-hidden="true">
-        <div className="absolute bottom-8 right-8 w-16 h-px" style={{ background: 'rgba(214,168,74,0.3)' }} />
-        <div className="absolute bottom-8 right-8 w-px h-16" style={{ background: 'rgba(214,168,74,0.3)' }} />
-      </div>
+      {/* Background ambient radial light */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-radial from-[#E5B842]/5 via-transparent to-transparent pointer-events-none" />
 
-      {/* Center radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(77,169,255,0.05) 0%, transparent 70%)',
-        }}
-      />
-      <div className="max-w-4xl w-full mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-        <FadeIn className="w-full">
-          <div
-            className="premium-card rounded-sm text-center transition-all duration-300 hover:border-gold-light"
-            style={{
-              background: 'linear-gradient(135deg, rgba(8,17,29,0.75) 0%, rgba(12,25,48,0.95) 100%)',
-              border: '1px solid rgba(77,169,255,0.18)',
-              boxShadow: '0 30px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(77,169,255,0.06)',
-              padding: '4.5rem 2.5rem',
-            }}
-          >
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="gold-line w-10" />
-              <span className="eyebrow">Get In Touch</span>
-              <div className="gold-line w-10" />
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+        
+        {/* Main Banner Container */}
+        <div className="rounded-3xl border border-white/15 bg-gradient-to-br from-[#0B1220]/95 via-[#060A14]/95 to-[#080D1A]/95 p-10 md:p-16 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          
+          {/* Decorative Corner Accents */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#E5B842]/10 via-[#4DA9FF]/5 to-transparent pointer-events-none rounded-full blur-2xl" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            
+            {/* Left Copy (8 cols) */}
+            <div className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/25 text-[0.7rem] font-mono tracking-widest text-[#E5B842] uppercase mb-4">
+                <Zap size={12} />
+                <span>COMMERCIAL & INDUSTRIAL PARTNERSHIPS</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
+                Ready to Secure Sovereign <br className="hidden sm:block" />
+                <span className="gold-text">Sintered NdFeB Magnet Supply?</span>
+              </h2>
+
+              <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed mb-8">
+                Connect directly with Magnova's executive engineering team regarding OEM supply agreements, custom sintered magnet prototypes, and strategic joint venture discussions.
+              </p>
+
+              <div className="flex flex-wrap gap-4 text-xs font-mono text-white/70">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+                  <ShieldCheck size={14} className="text-[#E5B842]" />
+                  <span>NDA Protected Inquiries</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+                  <Mail size={14} className="text-[#4DA9FF]" />
+                  <span>aditya.jha@magnova.asia | contact@magnova.asia</span>
+                </div>
+              </div>
             </div>
 
-            <h2
-              className="font-display font-bold text-white mb-5 text-center"
-              style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15 }}
-            >
-              Ready to Discuss a <span className="gold-text italic">Partnership?</span>
-            </h2>
-
-            <p
-              className="text-base leading-relaxed mb-10 max-w-xl mx-auto text-center"
-              style={{ color: 'rgba(255,255,255,0.5)' }}
-            >
-              Connect with Magnova regarding partnership opportunities, business inquiries,
-              or investor discussions. We welcome strategic conversations.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* Right Action Box (4 cols) */}
+            <div className="lg:col-span-4 flex flex-col gap-4">
               <Link
                 href="/contact"
                 id="home-cta-primary"
-                className="btn-primary inline-flex items-center gap-2 px-10 py-4 rounded-sm group"
+                className="w-full px-8 py-4 rounded-xl bg-[#E5B842] hover:bg-[#f0c44f] text-[#05080E] font-bold text-sm flex items-center justify-center gap-3 transition-all duration-200 shadow-xl shadow-[#E5B842]/15 uppercase tracking-wider"
               >
-                Contact Us
-                <ArrowRight
-                  size={15}
-                  className="transition-transform group-hover:translate-x-1"
-                />
+                <span>Request Custom Quote & Samples</span>
+                <ArrowRight size={16} />
               </Link>
+
               <Link
-                href="/technology"
+                href="/products"
                 id="home-cta-secondary"
-                className="btn-outline inline-flex items-center gap-2 px-10 py-4 rounded-sm"
+                className="w-full px-8 py-4 rounded-xl bg-[#080D1A] hover:bg-[#0E1626] text-white font-medium text-sm border border-white/15 hover:border-white/30 transition-all duration-200 flex items-center justify-center gap-2"
               >
-                Explore Technology
+                <FileText size={16} className="text-[#4DA9FF]" />
+                <span>Download REPM Spec Sheet</span>
               </Link>
             </div>
+
           </div>
-        </FadeIn>
+
+        </div>
+
       </div>
     </section>
   );

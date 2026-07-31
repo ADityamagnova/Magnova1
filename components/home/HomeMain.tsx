@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
 import Hero from './Hero';
+import ProductCatalogSection from './ProductCatalogSection';
 import StrategicImportance from './StrategicImportance';
 import IndustriesSection from './IndustriesSection';
+import TechnologyTeaser from './TechnologyTeaser';
 import VisionSection from './VisionSection';
 import HomeCTA from './HomeCTA';
 
@@ -500,8 +502,10 @@ export default function HomeMain() {
       {/* 4. TRANSPARENT HOMEPAGE CONTENT */}
       <div className="relative z-10 w-full flex flex-col items-center">
         <Hero />
+        <ProductCatalogSection />
         <StrategicImportance />
         <IndustriesSection />
+        <TechnologyTeaser />
         <VisionSection />
         <HomeCTA />
       </div>

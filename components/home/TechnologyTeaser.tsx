@@ -1,144 +1,210 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Cpu, ArrowRight, CheckCircle2, Flame, RefreshCw, Shield, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+
+interface PipelineStep {
+  step: string;
+  name: string;
+  shortDesc: string;
+  fullDesc: string;
+  parameters: string;
+  icon: any;
+}
+
+const pipelineSteps: PipelineStep[] = [
+  {
+    step: '01',
+    name: 'Vacuum Induction Melting',
+    shortDesc: 'Alloying Pure REPM Elements',
+    fullDesc: 'High-purity Neodymium (Nd), Iron (Fe), Boron (B), and Dy/Tb heavy rare earths are melted under ultra-high vacuum in induction furnaces to produce uniform metallurgical ingots.',
+    parameters: 'Temp: 1,450°C | Vacuum: 10⁻³ Pa | Purity: 99.95%',
+    icon: Flame,
+  },
+  {
+    step: '02',
+    name: 'Jet Milling & Pulverization',
+    shortDesc: 'Micro-Grain Powder Processing',
+    fullDesc: 'Ingots undergo Hydrogen Decrepitation (HD) followed by high-pressure inert Nitrogen Jet Milling, reducing alloy particles to a uniform 3.0 - 5.0 μm micro-powder.',
+    parameters: 'Particle Size: 3.2 μm | Atmosphere: High Purity N₂ | Speed: 600 m/s',
+    icon: RefreshCw,
+  },
+  {
+    step: '03',
+    name: 'Magnetic Field Alignment',
+    shortDesc: 'Crystal c-Axis Alignment',
+    fullDesc: 'Micro-powders are fed into high-tonnage transverse magnetic presses where a strong 2.0+ Tesla pulsed magnetic field aligns grain easy-axes before compaction.',
+    parameters: 'Aligning Field: 2.2 Tesla | Pressing Load: 150 Tons | Density: 4.2 g/cm³',
+    icon: Sparkles,
+  },
+  {
+    step: '04',
+    name: 'Vacuum Sintering & Heat Treatment',
+    shortDesc: 'Densification & Microstructure Aging',
+    fullDesc: 'Compacted blocks are vacuum-sintered near theoretical density (7.5 g/cm³) in inert Argon atmosphere, followed by two-stage aging to optimize coercivity (Hcj).',
+    parameters: 'Sinter Temp: 1,080°C | Density: 7.58 g/cm³ | Atmosphere: High Purity Ar',
+    icon: Cpu,
+  },
+  {
+    step: '05',
+    name: 'Precision Wire-Cut EDM',
+    shortDesc: 'High-Tolerance Machining',
+    fullDesc: 'Sintered NdFeB blocks are sliced using high-precision CNC wire-cut EDM and diamond grinding to achieve sub-hundredth millimeter dimensional tolerances.',
+    parameters: 'Tolerance: ±0.01 mm | Roughness: Ra 0.4 μm | Surface: Diamond Ground',
+    icon: Shield,
+  },
+  {
+    step: '06',
+    name: 'Multi-Layer Anti-Corrosion Coating',
+    shortDesc: 'Ni-Cu-Ni & Epoxy Electro-Plating',
+    fullDesc: 'Finished magnets receive automated electro-plated metallic or polymer coatings (Ni-Cu-Ni, Zinc, Epoxy, Passivation) providing 96+ hour salt spray corrosion resistance.',
+    parameters: 'Coating Thickness: 10 - 25 μm | Salt Spray: 96 - 240 Hrs | Adhesion: Class 5B',
+    icon: Shield,
+  },
+];
 
 export default function TechnologyTeaser() {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const imageY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
+  const [activeStepIdx, setActiveStepIdx] = useState<number>(3); // Step 04 active default
+  const activeStep = pipelineSteps[activeStepIdx];
 
   return (
     <section
-      ref={ref}
-      className="py-32 relative overflow-hidden flex flex-col items-center w-full"
-      style={{ background: 'linear-gradient(180deg, #061426 0%, #08192e 50%, #061426 100%)' }}
+      id="technology-pipeline"
+      className="relative w-full py-24 bg-[#050811] border-t border-b border-white/10 overflow-hidden"
     >
-      {/* Background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse, rgba(200,155,60,0.06) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-radial from-[#E5B842]/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative order-2 lg:order-1"
-          >
-            <div
-              className="relative aspect-square rounded-sm overflow-hidden"
-              style={{ border: '1px solid rgba(200,155,60,0.15)' }}
-            >
-              <motion.div style={{ y: imageY }} className="w-full h-[120%] -mt-[10%]">
-                <Image
-                  src="/crystal-structure.png"
-                  alt="Rare earth crystal lattice structure"
-                  fill
-                  className="object-cover"
-                  style={{ opacity: 0.9 }}
-                />
-              </motion.div>
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(6,20,38,0.4) 0%, transparent 60%)',
-                }}
-              />
-              {/* Corner accent */}
-              <div className="absolute top-4 left-4">
-                <div className="w-8 h-px" style={{ background: '#C89B3C' }} />
-                <div className="w-px h-8" style={{ background: '#C89B3C' }} />
-              </div>
-              <div className="absolute bottom-4 right-4">
-                <div className="w-8 h-px ml-auto" style={{ background: '#C89B3C' }} />
-                <div className="w-px h-8 ml-auto" style={{ background: '#C89B3C' }} />
-              </div>
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+        
+        {/* Header Title */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/25 text-[0.7rem] font-mono tracking-widest text-[#E5B842] uppercase mb-4">
+              <Cpu size={12} />
+              <span>ADVANCED SINTERING MANUFACTURING PIPELINE</span>
             </div>
-
-            {/* Floating label */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-6 -right-6 glass-gold px-5 py-3 rounded-sm"
-            >
-              <div className="text-xs font-semibold" style={{ color: '#C89B3C' }}>
-                NdFeB Crystal Lattice
-              </div>
-              <div className="text-xs mt-1" style={{ color: '#64748b' }}>
-                Nd₂Fe₁₄B — Maximum Energy Product
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="order-1 lg:order-2"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="gold-line w-8" />
-              <span
-                className="text-xs font-semibold tracking-widest uppercase"
-                style={{ color: '#C89B3C', letterSpacing: '0.2em' }}
-              >
-                The Science
-              </span>
-            </div>
-
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-              Engineering at the
-              <br />
-              <span className="gold-gradient-text">Molecular Level</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+              Engineering Excellence at the <br className="hidden sm:block" />
+              <span className="gold-text">Microstructural & Atomic Scale</span>
             </h2>
+          </div>
+          <p className="text-sm md:text-base text-white/70 max-w-md">
+            From raw elemental rare-earth metals to high-coercivity permanent magnets, explore Magnova's automated 6-stage sintering process.
+          </p>
+        </div>
 
-            <p className="text-base leading-relaxed mb-6" style={{ color: '#64748b' }}>
-              The performance of a rare earth magnet is determined at the atomic scale.
-              Magnova's materials science capability enables precise control over phase
-              composition, grain boundary structure, and microstructural morphology.
-            </p>
-
-            <p className="text-base leading-relaxed mb-10" style={{ color: '#64748b' }}>
-              The result: magnets that deliver maximum energy product, thermal stability,
-              and corrosion resistance — engineered to specification for demanding applications.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 mb-10">
-              {[
-                { label: 'NdFeB Magnets', sub: 'Maximum energy product' },
-                { label: 'SmCo Magnets', sub: 'High-temperature stability' },
-                { label: 'Grain Boundary', sub: 'Microstructure control' },
-                { label: 'Coercivity Tuning', sub: 'Application-specific' },
-              ].map((item) => (
-                <div key={item.label}>
-                  <div className="text-sm font-semibold text-white mb-1">{item.label}</div>
-                  <div className="text-xs" style={{ color: '#475569' }}>{item.sub}</div>
+        {/* --- STEP SELECTOR BAR --- */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+          {pipelineSteps.map((step, idx) => {
+            const isActive = idx === activeStepIdx;
+            const Icon = step.icon;
+            return (
+              <button
+                key={step.step}
+                onClick={() => setActiveStepIdx(idx)}
+                className={`p-4 rounded-xl text-left transition-all duration-300 border flex flex-col justify-between h-[120px] ${
+                  isActive
+                    ? 'bg-[#0E1626] border-[#E5B842] shadow-lg shadow-[#E5B842]/15 scale-[1.02]'
+                    : 'bg-[#080D1A]/60 border-white/10 hover:border-white/25 hover:bg-[#0A1122]'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className={`font-mono text-xs font-bold ${isActive ? 'text-[#E5B842]' : 'text-white/40'}`}>
+                    STEP // {step.step}
+                  </span>
+                  <Icon size={16} className={isActive ? 'text-[#E5B842]' : 'text-white/30'} />
                 </div>
-              ))}
+
+                <div>
+                  <h4 className={`text-xs sm:text-sm font-bold line-clamp-1 ${isActive ? 'text-white' : 'text-white/70'}`}>
+                    {step.name}
+                  </h4>
+                  <p className="text-[10px] text-white/50 line-clamp-1">{step.shortDesc}</p>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* --- ACTIVE STEP SHOWCASE DISPLAY CARD --- */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeStep.step}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.35 }}
+            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/95 to-[#060A14]/95 p-8 md:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
+          >
+            {/* Background Step Number Accent */}
+            <div className="absolute -right-6 -bottom-10 text-[180px] font-mono font-bold text-white/[0.03] select-none pointer-events-none">
+              {activeStep.step}
             </div>
 
-            <Link
-              href="/technology"
-              className="inline-flex items-center gap-2 text-sm font-semibold group"
-              style={{ color: '#C89B3C' }}
-            >
-              Explore our technology
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              
+              {/* Left Column Description (7 cols) */}
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3.5 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-xs font-mono font-bold text-[#E5B842]">
+                    STAGE {activeStep.step} OF 06
+                  </span>
+                  <span className="text-xs font-mono text-[#4DA9FF]">
+                    AUTOMATED SINTERING CELL
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  {activeStep.name}
+                </h3>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-6">
+                  {activeStep.fullDesc}
+                </p>
+
+                <div className="p-4 rounded-xl bg-[#050811] border border-white/10 font-mono text-xs text-[#E5B842]">
+                  <span className="text-white/60">PROCESS PARAMETERS: </span>
+                  <span className="font-bold">{activeStep.parameters}</span>
+                </div>
+              </div>
+
+              {/* Right Column Tech Highlights (5 cols) */}
+              <div className="lg:col-span-5 p-6 rounded-xl bg-[#080D1A] border border-white/10 flex flex-col justify-between h-full">
+                <div>
+                  <h4 className="text-xs font-mono tracking-widest text-white/50 uppercase mb-4">Quality & Process Assurance</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2.5 text-xs text-white/90">
+                      <CheckCircle2 size={16} className="text-[#4DA9FF] shrink-0" />
+                      <span>Closed-loop Argon atmosphere prevents grain oxidation</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-xs text-white/90">
+                      <CheckCircle2 size={16} className="text-[#4DA9FF] shrink-0" />
+                      <span>X-Ray Fluorescence (XRF) alloy composition verification</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-xs text-white/90">
+                      <CheckCircle2 size={16} className="text-[#4DA9FF] shrink-0" />
+                      <span>Automated BH Hysteresis grapher testing per batch</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-white/10">
+                  <Link
+                    href="/technology"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#E5B842] hover:underline"
+                  >
+                    View Full Metallurgy Technical Paper
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+
+            </div>
           </motion.div>
-        </div>
+        </AnimatePresence>
+
       </div>
     </section>
   );
