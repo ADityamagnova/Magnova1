@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Layers, ShieldCheck, Cpu, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Cpu, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 interface ProductShape {
@@ -30,7 +30,7 @@ const magnetShapes: ProductShape[] = [
     name: 'Arc & Segment Magnets',
     tagline: 'Custom Curved Segments for Brushless EV Motors',
     description: 'Oriented radial and axial arc magnets custom-contoured for high-torque permanent magnet synchronous motors (PMSM) used in modern electric vehicles and defense actuators.',
-    applications: ['EV Traction Motors', 'Drone Prop Propulsion', 'Servo Motors', 'Robotic Joints'],
+    applications: ['EV Traction Motors', 'Drone Propulsion', 'Servo Motors', 'Robotic Joints'],
     dimensions: 'Outer Radius: 10 - 250mm | Angle: 15° - 180° | Height: 5 - 120mm',
     icon: '🌙',
   },
@@ -57,10 +57,10 @@ const magnetShapes: ProductShape[] = [
 interface MagnetGrade {
   code: string;
   category: string;
-  br: string; // Remanence
-  hcb: string; // Coercivity
-  hcj: string; // Intrinsic Coercivity
-  bhMax: string; // Energy Product
+  br: string;
+  hcb: string;
+  hcj: string;
+  bhMax: string;
   maxTemp: string;
   idealFor: string;
 }
@@ -74,7 +74,7 @@ const magnetGrades: MagnetGrade[] = [
     hcj: '≥ 955 kA/m',
     bhMax: '398 - 422 kJ/m³',
     maxTemp: '80 °C',
-    idealFor: 'Maximum magnetic strength at ambient temperatures (Sensors, Electronics).',
+    idealFor: 'Maximum magnetic strength at ambient temperatures (Sensors, Consumer Electronics).',
   },
   {
     code: '50M',
@@ -138,63 +138,55 @@ export default function ProductCatalogSection() {
   return (
     <section
       id="product-catalog"
-      className="relative w-full py-24 bg-[#050811] border-t border-b border-white/10 overflow-hidden"
+      className="section relative w-full bg-[#030712] border-t border-b border-white/10 overflow-hidden"
     >
-      {/* Background CAD grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
-
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="container-custom relative z-10">
         
-        {/* Integrated 2-Column Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-[0.7rem] font-mono tracking-widest text-[#E5B842] uppercase mb-4">
-              <Zap size={12} />
-              <span>SINTERED NDFEB PRODUCT CATALOG</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              Precision Magnet Shapes & <br className="hidden sm:block" />
-              <span className="gold-text">Engineered Rare-Earth Grades</span>
-            </h2>
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="gold-line w-8" />
+            <span className="eyebrow">MAGNET ENGINEERING</span>
           </div>
-          <div className="lg:col-span-5">
-            <p className="text-sm md:text-base text-white/80 leading-relaxed border-l-2 border-[#E5B842] pl-4">
-              Custom manufactured to exact dimensional tolerances (±0.01mm) with specialized multi-layer protective coatings for demanding operating environments.
-            </p>
-          </div>
+          <h2 className="text-h2 text-white mb-5">
+            Precision Magnet Shapes & <span className="gold-text">Performance Grades</span>
+          </h2>
+          <p className="text-body-lg text-gray-300">
+            Engineered to exact dimensional tolerances (±0.01mm) with multi-layer protective coatings for demanding operating environments.
+          </p>
         </div>
 
-        {/* --- PART 1: MAGNET GEOMETRIES & SHAPES SHOWCASE --- */}
+        {/* --- PART 1: GEOMETRY SELECTOR (4 COLS) & SPECIFICATION PANEL (8 COLS) --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           
           {/* Shape Selectors List (4 cols) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
-            <h3 className="text-xs font-mono tracking-widest text-white/50 uppercase mb-2">Select Product Geometry</h3>
+            <h3 className="text-meta text-gray-400 mb-2">Product Geometries</h3>
             {magnetShapes.map((shape) => {
               const isActive = shape.id === activeShapeId;
               return (
                 <button
                   key={shape.id}
                   onClick={() => setActiveShapeId(shape.id)}
-                  className={`flex items-center justify-between p-4 rounded-xl text-left transition-all duration-300 border ${
+                  className={`flex items-center justify-between p-5 rounded-xl text-left transition-all duration-300 border ${
                     isActive
-                      ? 'bg-[#0E1626] border-[#E5B842] shadow-lg shadow-[#E5B842]/10'
-                      : 'bg-[#080D1A]/60 border-white/10 hover:border-white/25 hover:bg-[#0A1122]'
+                      ? 'bg-[#0B1220] border-[#D6A84A] shadow-lg shadow-[#D6A84A]/10'
+                      : 'bg-[#0B1220]/40 border-white/10 hover:border-white/25 hover:bg-[#0B1220]/70'
                   }`}
                 >
-                  <div className="flex items-center gap-3.5">
+                  <div className="flex items-center gap-4">
                     <span className="text-2xl">{shape.icon}</span>
                     <div>
-                      <h4 className={`text-base font-bold transition-colors ${isActive ? 'text-[#E5B842]' : 'text-white'}`}>
+                      <h4 className={`text-base font-bold transition-colors ${isActive ? 'text-[#D6A84A]' : 'text-white'}`}>
                         {shape.name}
                       </h4>
-                      <p className="text-xs text-white/60 line-clamp-1">{shape.tagline}</p>
+                      <p className="text-xs text-gray-400 line-clamp-1 mt-0.5">{shape.tagline}</p>
                     </div>
                   </div>
                   <ArrowRight
                     size={16}
                     className={`transition-transform duration-300 ${
-                      isActive ? 'text-[#E5B842] translate-x-1' : 'text-white/30'
+                      isActive ? 'text-[#D6A84A] translate-x-1' : 'text-gray-600'
                     }`}
                   />
                 </button>
@@ -202,7 +194,7 @@ export default function ProductCatalogSection() {
             })}
           </div>
 
-          {/* Active Shape Detailed Card (8 cols) */}
+          {/* Active Shape Detailed Specification Panel (8 cols) */}
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
               <motion.div
@@ -211,38 +203,35 @@ export default function ProductCatalogSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="h-full rounded-2xl border border-white/15 bg-[#080D1A]/90 p-8 flex flex-col justify-between relative overflow-hidden backdrop-blur-md shadow-2xl"
+                className="h-full rounded-2xl border border-white/15 bg-[#0B1220] p-8 md:p-10 flex flex-col justify-between shadow-2xl relative"
               >
-                {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#E5B842]/10 to-transparent pointer-events-none" />
-
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono text-[#E5B842] uppercase tracking-wider">
+                  <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
+                    <span className="text-meta text-[#D6A84A]">
                       FORM FACTOR // {activeShape.id.toUpperCase()}
                     </span>
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/70">
-                      Tolerance: ±0.01mm - ±0.05mm
+                    <span className="text-xs font-mono text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                      Tolerances: ±0.01mm – ±0.05mm
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                  <h3 className="text-h3 text-white mb-3">
                     {activeShape.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
+                  <p className="text-body-base text-gray-300 leading-relaxed mb-8">
                     {activeShape.description}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 pt-6 border-t border-white/10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 pt-6 border-t border-white/10">
                     <div>
-                      <h4 className="text-xs font-mono text-white/50 uppercase tracking-wider mb-2">Typical Applications</h4>
+                      <h4 className="text-meta text-gray-400 mb-3">Primary Applications</h4>
                       <div className="flex flex-wrap gap-2">
                         {activeShape.applications.map((app) => (
                           <span
                             key={app}
-                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#0F172A] border border-white/10 text-xs text-white/90"
+                            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#111827] border border-white/10 text-xs text-gray-200 font-medium"
                           >
-                            <CheckCircle2 size={12} className="text-[#4DA9FF]" />
+                            <CheckCircle2 size={14} className="text-[#3B82F6]" />
                             {app}
                           </span>
                         ))}
@@ -250,8 +239,8 @@ export default function ProductCatalogSection() {
                     </div>
 
                     <div>
-                      <h4 className="text-xs font-mono text-white/50 uppercase tracking-wider mb-2">Manufacturing Bounds</h4>
-                      <p className="text-xs font-mono text-[#E5B842] bg-[#E5B842]/5 border border-[#E5B842]/20 p-3 rounded-lg">
+                      <h4 className="text-meta text-gray-400 mb-3">Dimensional Bounds</h4>
+                      <p className="text-xs font-mono text-[#D6A84A] bg-[#D6A84A]/10 border border-[#D6A84A]/30 p-4 rounded-xl">
                         {activeShape.dimensions}
                       </p>
                     </div>
@@ -259,14 +248,14 @@ export default function ProductCatalogSection() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10">
-                  <div className="flex items-center gap-4 text-xs font-mono text-white/60">
-                    <span>Coatings: Ni-Cu-Ni | Epoxy | Zinc | Passivation</span>
-                  </div>
+                  <span className="text-xs font-mono text-gray-400">
+                    Protective Coatings: Ni-Cu-Ni | Epoxy | Zinc | Passivation
+                  </span>
                   <Link
                     href="/products"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#E5B842] hover:bg-[#f0c44f] text-[#05080E] font-bold text-xs uppercase tracking-wider transition-all"
+                    className="btn-primary text-xs uppercase"
                   >
-                    Request Custom Spec Sheet
+                    <span>Request Custom Spec Sheet</span>
                     <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -276,19 +265,19 @@ export default function ProductCatalogSection() {
 
         </div>
 
-        {/* --- PART 2: SINTERED GRADE SELECTOR TABLE --- */}
-        <div className="rounded-2xl border border-white/15 bg-[#080D1A]/90 p-8 backdrop-blur-md">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+        {/* --- PART 2: SINTERED GRADE MATRIX --- */}
+        <div className="rounded-2xl border border-white/15 bg-[#0B1220] p-8 md:p-10">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8 gap-6 pb-6 border-b border-white/10">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+              <h3 className="text-h3 text-white mb-2">
                 Sintered NdFeB Magnetic Grade Matrix
               </h3>
-              <p className="text-xs sm:text-sm text-white/60">
+              <p className="text-body-base text-gray-400">
                 Select a magnetic grade below to inspect technical coercivity and thermal degradation thresholds.
               </p>
             </div>
 
-            {/* Grade Pills */}
+            {/* Grade Selector Tabs */}
             <div className="flex flex-wrap gap-2">
               {magnetGrades.map((grade) => {
                 const isActive = grade.code === activeGradeCode;
@@ -296,10 +285,10 @@ export default function ProductCatalogSection() {
                   <button
                     key={grade.code}
                     onClick={() => setActiveGradeCode(grade.code)}
-                    className={`px-4 py-2 rounded-lg font-mono text-xs font-bold transition-all ${
+                    className={`px-4 py-2.5 rounded-xl font-mono text-xs font-bold transition-all ${
                       isActive
-                        ? 'bg-[#E5B842] text-[#05080E] shadow-md shadow-[#E5B842]/20 scale-105'
-                        : 'bg-[#0E1626] text-white/70 hover:text-white border border-white/10 hover:border-white/30'
+                        ? 'bg-[#D6A84A] text-[#030712] shadow-lg shadow-[#D6A84A]/20 scale-105'
+                        : 'bg-[#111827] text-gray-300 hover:text-white border border-white/10 hover:border-white/30'
                     }`}
                   >
                     {grade.code}
@@ -309,42 +298,42 @@ export default function ProductCatalogSection() {
             </div>
           </div>
 
-          {/* Grade Spec Breakdown */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          {/* Primary Specs Upfront */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Main Stats (8 cols) */}
-            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-xl bg-[#050811] border border-white/10 font-mono">
-              <div className="border-r border-white/10 pr-3">
-                <p className="text-[10px] text-white/40 uppercase tracking-wider mb-1">REMANENCE (Br)</p>
-                <p className="text-base sm:text-lg font-bold text-[#E5B842]">{activeGrade.br}</p>
+            {/* Primary Properties (8 cols) */}
+            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-6 p-6 rounded-xl bg-[#030712] border border-white/10 font-mono">
+              <div className="border-r border-white/10 pr-4">
+                <p className="text-meta text-gray-500 mb-1">REMANENCE (Br)</p>
+                <p className="text-xl font-bold text-[#D6A84A]">{activeGrade.br}</p>
               </div>
 
-              <div className="border-r border-white/10 pr-3">
-                <p className="text-[10px] text-white/40 uppercase tracking-wider mb-1">COERCIVITY (Hcb)</p>
-                <p className="text-base sm:text-lg font-bold text-white">{activeGrade.hcb}</p>
+              <div className="border-r border-white/10 pr-4">
+                <p className="text-meta text-gray-500 mb-1">COERCIVITY (Hcb)</p>
+                <p className="text-xl font-bold text-white">{activeGrade.hcb}</p>
               </div>
 
-              <div className="border-r border-white/10 pr-3">
-                <p className="text-[10px] text-white/40 uppercase tracking-wider mb-1">INTRINSIC (Hcj)</p>
-                <p className="text-base sm:text-lg font-bold text-[#4DA9FF]">{activeGrade.hcj}</p>
+              <div className="border-r border-white/10 pr-4">
+                <p className="text-meta text-gray-500 mb-1">INTRINSIC (Hcj)</p>
+                <p className="text-xl font-bold text-[#3B82F6]">{activeGrade.hcj}</p>
               </div>
 
               <div>
-                <p className="text-[10px] text-white/40 uppercase tracking-wider mb-1">MAX ENERGY (BHmax)</p>
-                <p className="text-base sm:text-lg font-bold text-white">{activeGrade.bhMax}</p>
+                <p className="text-meta text-gray-500 mb-1">MAX ENERGY (BHmax)</p>
+                <p className="text-xl font-bold text-white">{activeGrade.bhMax}</p>
               </div>
             </div>
 
-            {/* Operating Temp & Application Fit (4 cols) */}
-            <div className="lg:col-span-4 p-5 rounded-xl bg-[#0E1626] border border-[#E5B842]/20 flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono text-white/50 uppercase">MAX OPERATING TEMP</span>
-                <span className="px-3 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-xs font-mono font-bold text-[#E5B842]">
+            {/* Max Operating Temp & Ideal For (4 cols) */}
+            <div className="lg:col-span-4 p-6 rounded-xl bg-[#111827] border border-[#D6A84A]/30 flex flex-col justify-between h-full">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-meta text-gray-400">MAX OPERATING TEMP</span>
+                <span className="px-3 py-1 rounded-full bg-[#D6A84A]/10 border border-[#D6A84A]/30 text-xs font-mono font-bold text-[#D6A84A]">
                   ≤ {activeGrade.maxTemp}
                 </span>
               </div>
-              <p className="text-xs text-white/80 leading-relaxed font-sans">
-                <span className="font-bold text-white">Ideal For:</span> {activeGrade.idealFor}
+              <p className="text-sm text-gray-300 leading-relaxed font-sans">
+                <strong className="text-white font-semibold">Ideal Application Fit:</strong> {activeGrade.idealFor}
               </p>
             </div>
 

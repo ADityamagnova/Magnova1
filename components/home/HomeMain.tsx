@@ -432,7 +432,7 @@ export default function HomeMain() {
   }, [scrollYProgress]);
 
   return (
-    <div ref={containerRef} className="relative w-full bg-[#02050B] overflow-hidden select-none">
+    <div ref={containerRef} className="relative w-full bg-[#030712] overflow-hidden">
       
       {/* 1. MASTER WEBGL CANVAS */}
       <canvas

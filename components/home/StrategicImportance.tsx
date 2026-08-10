@@ -1,218 +1,184 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Factory, Sun, Landmark, ArrowUpRight, Zap, Globe2, CheckCircle2 } from 'lucide-react';
+import { Factory, ShieldCheck, ArrowRight, CheckCircle2, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 export default function StrategicImportance() {
   return (
     <section
       id="strategic-importance"
-      className="relative w-full py-24 bg-[#02050B] overflow-hidden"
+      className="section relative w-full bg-[#070C18] border-t border-b border-white/10 overflow-hidden"
     >
-      {/* Background ambient radial lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-radial from-[#4DA9FF]/5 via-transparent to-transparent pointer-events-none" />
-
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="container-custom relative z-10">
         
-        {/* Integrated 2-Column Header Block (Fills Right Side Naturally) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4DA9FF]/10 border border-[#4DA9FF]/25 text-[0.7rem] font-mono tracking-widest text-[#4DA9FF] uppercase mb-4">
-              <Globe2 size={12} />
-              <span>COMMERCIAL FOOTPRINT & STRATEGIC IMPACT</span>
+        {/* --- PART 1: COMMERCIAL CAMPUS & DOMINANT METRICS --- */}
+        <div className="mb-24">
+          
+          {/* Section Header */}
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="gold-line w-8" />
+              <span className="eyebrow">COMMERCIAL FOOTPRINT & STRATEGIC IMPACT</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              India's Pioneer Commercial-Scale <br className="hidden sm:block" />
-              <span className="gold-text">Sintered Rare-Earth Magnet Campus</span>
+            <h2 className="text-h2 text-white mb-5">
+              India's Pioneer Commercial-Scale <span className="gold-text">Sintered Rare-Earth Magnet Campus</span>
             </h2>
-          </div>
-          <div className="lg:col-span-5">
-            <p className="text-sm md:text-base text-white/80 leading-relaxed border-l-2 border-[#E5B842] pl-4">
-              Securing national self-reliance and global supply chain resilience through state-of-the-art commercial permanent magnet sintering capabilities.
+            <p className="text-body-lg text-gray-300">
+              Establishing critical domestic manufacturing infrastructure to secure national supply chain independence for high-performance sintered NdFeB magnets.
             </p>
+          </div>
+
+          {/* 6-Col Visual / 6-Col Dominant Metrics Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left 6 Cols: Facility Visual Composition */}
+            <div className="lg:col-span-6">
+              <div className="relative rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220] to-[#030712] p-8 md:p-12 overflow-hidden shadow-2xl min-h-[420px] flex flex-col justify-between">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-[#D6A84A]/10 via-[#3B82F6]/5 to-transparent pointer-events-none rounded-full blur-3xl" />
+                
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="px-3.5 py-1.5 rounded-full bg-[#D6A84A]/10 border border-[#D6A84A]/30 text-xs font-mono text-[#D6A84A] font-bold">
+                      GUJARAT, INDIA
+                    </span>
+                    <span className="text-xs font-mono text-gray-400">FACILITY FOOTPRINT</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 rounded-xl bg-[#D6A84A]/10 border border-[#D6A84A]/30 text-[#D6A84A]">
+                      <Factory size={28} />
+                    </div>
+                    <h3 className="text-h3 text-white">
+                      Purpose-Built Manufacturing Facility
+                    </h3>
+                  </div>
+
+                  <p className="text-body-base text-gray-300 leading-relaxed mb-6">
+                    Equipped with automated vacuum induction melting (VIM) furnaces, inert nitrogen jet mills, transverse magnetic field presses, and automated multi-stage sintering cells.
+                  </p>
+                </div>
+
+                <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs font-mono text-gray-400">Environment: 100% Solar-Integrated & Zero Liquid Discharge</span>
+                  <Link href="/about" className="text-xs font-mono text-[#D6A84A] font-bold hover:underline inline-flex items-center gap-1">
+                    <span>Campus Specs</span>
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Right 6 Cols: Dominant Key Metrics Grid */}
+            <div className="lg:col-span-6 grid grid-cols-2 gap-6">
+              
+              <div className="p-8 rounded-2xl bg-[#0B1220] border border-white/12 shadow-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-meta text-gray-400 block mb-2">LAND PARCEL</span>
+                  <p className="text-5xl font-extrabold text-white font-sans tracking-tight mb-2">25</p>
+                  <p className="text-base font-bold text-[#D6A84A]">Acres</p>
+                </div>
+                <p className="text-xs text-gray-400 mt-4 pt-4 border-t border-white/10">Commercial Sintering Campus in Gujarat</p>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-[#0B1220] border border-white/12 shadow-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-meta text-gray-400 block mb-2">INITIAL CAPACITY</span>
+                  <p className="text-5xl font-extrabold text-white font-sans tracking-tight mb-2">1,200</p>
+                  <p className="text-base font-bold text-[#3B82F6]">TPA</p>
+                </div>
+                <p className="text-xs text-gray-400 mt-4 pt-4 border-t border-white/10">Tons Per Annum Sintered Magnet Output</p>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-[#0B1220] border border-white/12 shadow-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-meta text-gray-400 block mb-2">EXPANSION TARGET</span>
+                  <p className="text-5xl font-extrabold text-[#D6A84A] font-sans tracking-tight mb-2">3,000</p>
+                  <p className="text-base font-bold text-white">TPA</p>
+                </div>
+                <p className="text-xs text-gray-400 mt-4 pt-4 border-t border-white/10">Phase 2 Planned Manufacturing Scale</p>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-[#0B1220] border border-white/12 shadow-xl flex flex-col justify-between">
+                <div>
+                  <span className="text-meta text-gray-400 block mb-2">POLICY INCENTIVE</span>
+                  <p className="text-5xl font-extrabold text-white font-sans tracking-tight mb-2">50%</p>
+                  <p className="text-base font-bold text-[#D6A84A]">Capital Subsidy</p>
+                </div>
+                <p className="text-xs text-gray-400 mt-4 pt-4 border-t border-white/10">Ministry of Heavy Industries Backing</p>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
-        {/* --- NEO-INSPIRED BALANCED BENTO GRID (6 Cols / 6 Cols) --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          {/* BENTO CARD 1: 25-Acre Manufacturing Campus (6 cols) */}
-          <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.3 }}
-            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
-          >
-            {/* Ambient Background Graphic */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#E5B842]/10 via-[#4DA9FF]/5 to-transparent pointer-events-none rounded-full blur-3xl" />
-
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="px-3 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-xs font-mono text-[#E5B842] font-bold">
-                  GUJARAT, INDIA
-                </span>
-                <span className="text-xs font-mono text-white/40">CAMPUS // 01</span>
+        {/* --- PART 2: SOVEREIGN SUPPLY INDEPENDENCE FLOW DIAGRAM --- */}
+        <div className="p-10 md:p-14 rounded-3xl bg-[#0B1220] border border-white/15 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Storytelling (5 cols) */}
+            <div className="lg:col-span-5">
+              <div className="inline-flex items-center gap-2 mb-3 text-xs font-mono text-[#3B82F6] font-bold uppercase">
+                <ShieldCheck size={16} />
+                <span>STRATEGIC AUTONOMY</span>
               </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-[#E5B842]/10 border border-[#E5B842]/20 text-[#E5B842]">
-                  <Factory size={22} />
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#E5B842] transition-colors">
-                  25-Acre Commercial Sintering Campus
-                </h3>
-              </div>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
-                Magnova's mega-facility is purpose-built to scale from <span className="text-white font-bold">1,200 TPA initial capacity to 3,000 TPA</span> of sintered NdFeB permanent magnets, equipped with automated vacuum induction furnaces, jet mills, and multi-axis magnetizers.
+              <h3 className="text-h2 text-white mb-4">
+                Sovereign Supply Independence
+              </h3>
+              <p className="text-body-base text-gray-300 mb-6 leading-relaxed">
+                Rare-earth permanent magnets are critical inputs for modern mobility, clean energy, and national defense. Magnova provides a sovereign manufacturing domestic alternative to reduce global supply chain vulnerability.
               </p>
-            </div>
-
-            {/* Bottom Metrics Bar inside Card */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 font-mono">
-              <div>
-                <p className="text-[10px] text-white/40 uppercase">Initial Capacity</p>
-                <p className="text-lg font-bold text-white">1,200 TPA</p>
-              </div>
-              <div>
-                <p className="text-[10px] text-white/40 uppercase">Expansion Target</p>
-                <p className="text-lg font-bold text-[#E5B842]">3,000 TPA</p>
-              </div>
-              <div>
-                <p className="text-[10px] text-white/40 uppercase">Land Parcel</p>
-                <p className="text-lg font-bold text-[#4DA9FF]">25 Acres</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* BENTO CARD 2: Sovereign Supply Chain Independence (6 cols) */}
-          <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.3 }}
-            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="px-3 py-1 rounded-full bg-[#4DA9FF]/10 border border-[#4DA9FF]/30 text-xs font-mono text-[#4DA9FF] font-bold">
-                  NATIONAL SECURITY
-                </span>
-                <span className="text-xs font-mono text-white/40">SUPPLY // 02</span>
-              </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-[#4DA9FF]/10 border border-[#4DA9FF]/20 text-[#4DA9FF]">
-                  <ShieldCheck size={22} />
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm text-gray-200">
+                  <CheckCircle2 size={16} className="text-[#D6A84A] shrink-0" />
+                  <span>Eliminating 100% import dependency for NdFeB magnets</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#4DA9FF] transition-colors">
-                  Sovereign Supply Independence
-                </h3>
-              </div>
-
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
-                Eliminating 100% import dependency for critical rare-earth permanent magnets (REPM) across EV motors, defense guidance systems, aerospace actuators, and offshore wind turbines.
-              </p>
-
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2.5 text-xs text-white/90">
-                  <CheckCircle2 size={16} className="text-[#E5B842] shrink-0" />
-                  <span>Domestic supply chain security for EV & Defense OEMs</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-xs text-white/90">
-                  <CheckCircle2 size={16} className="text-[#E5B842] shrink-0" />
-                  <span>High-coercivity Dy/Tb grain boundary diffusion capability</span>
+                <div className="flex items-center gap-3 text-sm text-gray-200">
+                  <CheckCircle2 size={16} className="text-[#D6A84A] shrink-0" />
+                  <span>Heavy rare-earth Dy/Tb grain boundary diffusion capability</span>
                 </div>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#050811] border border-white/10 font-mono text-xs text-white/80">
-              <span className="text-[#E5B842] font-bold">Strategic Priority:</span> Sovereign manufacturing capability for high-coercivity NdFeB grades.
-            </div>
-          </motion.div>
-
-          {/* BENTO CARD 3: 100% Solar-Integrated & Sustainable Sintering (6 cols) */}
-          <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.3 }}
-            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 font-bold">
-                  GREEN MANUFACTURING
-                </span>
-                <span className="text-xs font-mono text-white/40">ESG // 03</span>
-              </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                  <Sun size={22} />
+            {/* Right Supply Chain Diagram (7 cols) */}
+            <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#030712] border border-white/10 font-mono text-xs">
+              <h4 className="text-meta text-gray-400 mb-6 border-b border-white/10 pb-3">Sovereign Value Chain Architecture</h4>
+              
+              <div className="flex flex-col gap-4">
+                {/* Node 1 */}
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#0B1220] border border-white/10">
+                  <span className="text-gray-400 font-bold">01. RAW MATERIALS</span>
+                  <span className="text-white">Rare-Earth Oxides & Metals (Nd, Pr, Dy, Tb)</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-                  Solar Powered & Zero Waste Operations
-                </h3>
-              </div>
 
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
-                Campus equipped with rooftop solar energy generation, closed-loop Argon gas atmosphere recycling, and Zero Liquid Discharge (ZLD) effluent management.
-              </p>
-            </div>
+                <div className="text-center text-[#D6A84A] font-bold text-sm">↓</div>
 
-            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 font-mono text-xs text-emerald-400">
-              <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
-                <span className="block text-[10px] text-white/40 uppercase mb-0.5">Energy Mix</span>
-                <span className="font-bold">100% Solar-Integrated</span>
-              </div>
-              <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
-                <span className="block text-[10px] text-white/40 uppercase mb-0.5">Atmosphere</span>
-                <span className="font-bold">Closed-Loop Argon</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* BENTO CARD 4: Government Policy & 50% Capital Subsidy (6 cols) */}
-          <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ duration: 0.3 }}
-            className="rounded-2xl border border-white/15 bg-gradient-to-br from-[#0B1220]/90 to-[#060A14]/90 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden backdrop-blur-md h-full shadow-2xl group"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <span className="px-3 py-1 rounded-full bg-[#E5B842]/10 border border-[#E5B842]/30 text-xs font-mono text-[#E5B842] font-bold">
-                  POLICY BACKING
-                </span>
-                <span className="text-xs font-mono text-white/40">INCENTIVES // 04</span>
-              </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-xl bg-[#E5B842]/10 border border-[#E5B842]/20 text-[#E5B842]">
-                  <Landmark size={22} />
+                {/* Node 2 */}
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#0B1220] border border-white/10">
+                  <span className="text-gray-400 font-bold">02. METALLURGY</span>
+                  <span className="text-white">Vacuum Induction Alloying & Jet Milling</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-[#E5B842] transition-colors">
-                  50% Capital Subsidy & Policy Alignment
-                </h3>
-              </div>
 
-              <p className="text-sm sm:text-base text-white/80 leading-relaxed mb-6">
-                Aligned with the Ministry of Heavy Industries REPM manufacturing mandate, securing up to <span className="text-white font-bold">50% capital subsidy support</span> for critical rare-earth processing and sintering infrastructure.
-              </p>
+                <div className="text-center text-[#D6A84A] font-bold text-sm">↓</div>
+
+                {/* Node 3 */}
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#0B1220] border border-[#D6A84A]/40 bg-[#D6A84A]/5">
+                  <span className="text-[#D6A84A] font-bold">03. MAGNOVA CAMPUS</span>
+                  <span className="text-white font-bold">NdFeB Sintering & Precision EDM Machining</span>
+                </div>
+
+                <div className="text-center text-[#D6A84A] font-bold text-sm">↓</div>
+
+                {/* Node 4 */}
+                <div className="flex items-center justify-between p-4 rounded-xl bg-[#0B1220] border border-[#3B82F6]/40">
+                  <span className="text-[#3B82F6] font-bold">04. STRATEGIC SECTORS</span>
+                  <span className="text-white">EV Traction / Wind Generators / Defense Guidance</span>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
-              <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-                <Zap size={14} className="text-[#E5B842]" />
-                <span>Commercial Dispatch & IPO Roadmap Active</span>
-              </div>
-
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#E5B842] hover:underline"
-              >
-                Read Strategic Whitepaper
-                <ArrowUpRight size={14} />
-              </Link>
-            </div>
-          </motion.div>
-
+          </div>
         </div>
 
       </div>
