@@ -8,7 +8,6 @@ import ProductCatalogSection from './ProductCatalogSection';
 import StrategicImportance from './StrategicImportance';
 import IndustriesSection from './IndustriesSection';
 import TechnologyTeaser from './TechnologyTeaser';
-import VisionSection from './VisionSection';
 import HomeCTA from './HomeCTA';
 
 export default function HomeMain() {
@@ -506,7 +505,6 @@ export default function HomeMain() {
         <StrategicImportance />
         <IndustriesSection />
         <TechnologyTeaser />
-        <VisionSection />
         <HomeCTA />
       </div>
 
