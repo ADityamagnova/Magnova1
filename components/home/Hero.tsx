@@ -2,48 +2,43 @@
 
 import LinkNext from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section
       id="hero-section"
       className="relative w-full min-h-screen flex items-center justify-center bg-transparent pt-28 pb-16 overflow-hidden"
-      style={{ fontFamily: "'Inter', sans-serif" }}
       aria-labelledby="hero-heading"
     >
       {/* Splitscreen Container */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        {/* LEFT COLUMN: BRAND & VALUE COPY (5 columns on desktop) */}
-        <div className="lg:col-span-5 flex flex-col justify-center text-left max-w-[560px] w-full mx-auto lg:mx-0">
+        {/* LEFT COLUMN: BRAND & VALUE COPY (6 columns on desktop - Balanced) */}
+        <div className="lg:col-span-6 flex flex-col justify-center text-left max-w-2xl w-full mx-auto lg:mx-0">
           
           {/* Eyebrow Badge */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2.5 mb-6 w-fit px-3.5 py-1.5 rounded-full bg-[#0F141F]/80 border border-white/10 text-[0.62rem] font-mono tracking-wider uppercase text-white/70"
+            className="inline-flex items-center gap-2.5 mb-6 w-fit px-4 py-1.5 rounded-full bg-[#0F141F]/90 border border-[#E5B842]/30 text-[0.65rem] font-mono tracking-wider uppercase text-white/80 backdrop-blur-md shadow-lg"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E5B842] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#E5B842] animate-pulse" />
             <span>INDIA'S FIRST COMMERCIAL SINTERED MAGNET MANUFACTURING CAMPUS</span>
           </motion.div>
 
-          {/* Headline - Exact line breaks matching reference image */}
+          {/* Headline - Clean, aesthetic 3-line format without cluttered line breaks */}
           <motion.h1
             id="hero-heading"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[2.6rem] sm:text-[3.6rem] lg:text-[72px] font-bold text-white tracking-tight leading-[1.04] mb-6 font-sans"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white tracking-tight leading-[1.12] mb-6 font-sans"
           >
-            Engineering<br />
-            India's Future<br />
-            with<br />
-            <span className="text-[#E5B842] block">
-              Advanced<br />
-              Permanent<br />
-              Magnet
+            Engineering India's Future with{' '}
+            <span className="text-[#E5B842] block mt-1.5">
+              Advanced Permanent Magnet
             </span>
             Manufacturing.
           </motion.h1>
@@ -53,9 +48,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-[#A0AABA] text-sm sm:text-base leading-[1.65] max-w-[500px] mb-8 font-sans"
+            className="text-[#A0AABA] text-sm sm:text-base leading-[1.7] max-w-xl mb-8 font-sans"
           >
-            A 25-acre campus engineered for sovereign supply of sintered NdFeB magnets — the critical material behind EV traction motors, wind turbines and defence systems.
+            A 25-acre commercial campus engineered for sovereign supply of sintered NdFeB magnets — the critical material powering EV traction motors, wind energy generators, and defense systems.
           </motion.p>
 
           {/* Call to Action Buttons */}
@@ -63,11 +58,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="flex flex-col sm:flex-row items-center gap-4"
+            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
           >
             <LinkNext
               href="/technology"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#E5B842] hover:bg-[#f0c44f] text-[#05080E] font-bold text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-lg shadow-[#E5B842]/10"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-[#E5B842] hover:bg-[#f0c44f] text-[#05080E] font-bold text-sm flex items-center justify-center gap-2.5 transition-all duration-200 shadow-xl shadow-[#E5B842]/15 uppercase tracking-wider"
             >
               <span>Explore Technology</span>
               <ArrowRight size={16} />
@@ -75,7 +70,7 @@ export default function Hero() {
 
             <LinkNext
               href="/about"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#0B1019] hover:bg-[#151c2a] text-white font-medium text-sm border border-white/15 hover:border-white/30 transition-all duration-200 flex items-center justify-center"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-[#0B1019] hover:bg-[#151c2a] text-white font-medium text-sm border border-white/15 hover:border-white/30 transition-all duration-200 flex items-center justify-center"
             >
               View Manufacturing Campus
             </LinkNext>
@@ -83,19 +78,19 @@ export default function Hero() {
 
         </div>
 
-        {/* RIGHT COLUMN: FRAMED TECHNICAL HUD CARD (7 columns on desktop) */}
-        <div className="lg:col-span-7 w-full relative">
+        {/* RIGHT COLUMN: FRAMED TECHNICAL HUD CARD (6 columns on desktop) */}
+        <div className="lg:col-span-6 w-full relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="relative w-full rounded-xl border border-white/15 bg-[#060910]/85 backdrop-blur-xl p-5 md:p-6 overflow-hidden shadow-2xl flex flex-col justify-between min-h-[540px]"
+            className="relative w-full rounded-2xl border border-white/15 bg-[#060910]/90 backdrop-blur-xl p-6 overflow-hidden shadow-2xl flex flex-col justify-between min-h-[520px]"
           >
             {/* CAD Corner Crosshairs */}
-            <div className="absolute top-2.5 left-2.5 text-[10px] font-mono text-white/20 select-none">┌</div>
-            <div className="absolute top-2.5 right-2.5 text-[10px] font-mono text-white/20 select-none">┐</div>
-            <div className="absolute bottom-2.5 left-2.5 text-[10px] font-mono text-white/20 select-none">└</div>
-            <div className="absolute bottom-2.5 right-2.5 text-[10px] font-mono text-white/20 select-none">┘</div>
+            <div className="absolute top-3 left-3 text-[10px] font-mono text-white/20 select-none">┌</div>
+            <div className="absolute top-3 right-3 text-[10px] font-mono text-white/20 select-none">┐</div>
+            <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/20 select-none">└</div>
+            <div className="absolute bottom-3 right-3 text-[10px] font-mono text-white/20 select-none">┘</div>
 
             {/* Top HUD Header Bar */}
             <div className="flex items-center justify-between text-[0.68rem] font-mono tracking-wider border-b border-white/10 pb-3">
@@ -107,7 +102,7 @@ export default function Hero() {
             </div>
 
             {/* Top-Right Telemetry Card (MATERIAL SPEC A1) */}
-            <div className="absolute top-14 right-6 bg-[#0B101D]/90 border border-white/15 rounded-md p-3 text-[0.68rem] font-mono w-[170px] shadow-xl z-20 backdrop-blur-md pointer-events-none">
+            <div className="absolute top-14 right-6 bg-[#0B101D]/95 border border-white/15 rounded-md p-3 text-[0.68rem] font-mono w-[170px] shadow-xl z-20 backdrop-blur-md pointer-events-none">
               <div className="flex justify-between items-center text-[#E5B842] font-bold border-b border-white/10 pb-1.5 mb-2">
                 <span>MATERIAL SPEC</span>
                 <span className="text-white/40 font-normal">A1</span>
@@ -121,7 +116,7 @@ export default function Hero() {
             </div>
 
             {/* Center 3D Space & Circular Compass Background */}
-            <div className="relative flex-1 min-h-[280px] pointer-events-none flex items-center justify-center">
+            <div className="relative flex-1 min-h-[260px] pointer-events-none flex items-center justify-center">
               {/* Concentric polar HUD grid circles */}
               <div className="absolute w-[240px] h-[240px] rounded-full border border-[#E5B842]/20 pointer-events-none animate-pulse" />
               <div className="absolute w-[340px] h-[340px] rounded-full border border-white/5 pointer-events-none" />
@@ -129,7 +124,7 @@ export default function Hero() {
             </div>
 
             {/* Bottom-Left Telemetry Card (SINTER CELL 02) */}
-            <div className="absolute bottom-28 left-6 bg-[#0B101D]/90 border border-white/15 rounded-md p-3 text-[0.68rem] font-mono w-[170px] shadow-xl z-20 backdrop-blur-md pointer-events-none">
+            <div className="absolute bottom-28 left-6 bg-[#0B101D]/95 border border-white/15 rounded-md p-3 text-[0.68rem] font-mono w-[170px] shadow-xl z-20 backdrop-blur-md pointer-events-none">
               <div className="flex justify-between items-center text-[#4DA9FF] font-bold border-b border-white/10 pb-1.5 mb-2">
                 <span>SINTER CELL</span>
                 <span className="text-white/40 font-normal">02</span>
